@@ -1,5 +1,5 @@
 platform :ios, '8.0'
 target :HNBNetWorkDemo do
     pod 'AFNetworking', '3.1.0'
-    pod 'HNBNetWork',:git => 'https://github.com/ByronChengChen/HNBNetWork.git'
+    pod 'HNBNetWork', '0.0.2'
 end

@@ -14,26 +14,17 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - HNBNetWork (0.0.1):
+  - HNBNetWork (0.0.2):
     - AFNetworking (= 3.1.0)
 
 DEPENDENCIES:
   - AFNetworking (= 3.1.0)
-  - HNBNetWork (from `https://github.com/ByronChengChen/HNBNetWork.git`)
-
-EXTERNAL SOURCES:
-  HNBNetWork:
-    :git: https://github.com/ByronChengChen/HNBNetWork.git
-
-CHECKOUT OPTIONS:
-  HNBNetWork:
-    :commit: d9b72b02baaa4545059ec1b88254e6db6cedfad0
-    :git: https://github.com/ByronChengChen/HNBNetWork.git
+  - HNBNetWork (= 0.0.2)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  HNBNetWork: b0e23a50cd72baa8c5b47ff07f3676591d7880ce
+  HNBNetWork: 4e09892e7968bba5f80b1985b1bd515e9253c516
 
-PODFILE CHECKSUM: 316e91d4b974eac1fd2626d5d186108b752e44d7
+PODFILE CHECKSUM: d82ba450481c786efa0f0e71bf375a1835e0adec
 
 COCOAPODS: 1.1.1
