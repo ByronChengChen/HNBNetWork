@@ -351,6 +351,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E4RHLV9RJ8;
 				INFOPLIST_FILE = HNBNetWorkDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rongzi.sdt.HNBNetWorkDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -364,6 +365,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E4RHLV9RJ8;
 				INFOPLIST_FILE = HNBNetWorkDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rongzi.sdt.HNBNetWorkDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -389,6 +391,7 @@
 				4420D8F71F022A56007DD6E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
