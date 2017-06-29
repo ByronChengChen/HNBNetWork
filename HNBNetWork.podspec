@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HNBNetWork"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "HNBNetWork is a high level request util based on AFNetworking."
 
   # This description is used to generate tags and improve search results.
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/ByronChengChen/HNBNetWork.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://github.com/ByronChengChen/HNBNetWork.git", :tag => "0.0.3" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
