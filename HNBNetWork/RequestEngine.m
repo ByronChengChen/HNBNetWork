@@ -58,7 +58,10 @@
                 NSLog(@"reponse:++++++++++++++\n url:%@,\n params:%@,\n responseObject:%@",url,params,responseObject);
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 NSLog(@"error:%@",error);
-                failBlock(error);
+                //取消了就不回调了
+                if(-999 != error.code){
+                    failBlock(error);
+                }
             }];
         }
             break;
@@ -68,7 +71,10 @@
                 NSLog(@"reponse:++++++++++++++\n url:%@,\n params:%@,\n responseObject:%@ ",url,params,responseObject);
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 NSLog(@"error:%@",error);
-                failBlock(error);
+                //取消了就不回调了
+                if(-999 != error.code){
+                    failBlock(error);
+                }
             }];
         }
             break;

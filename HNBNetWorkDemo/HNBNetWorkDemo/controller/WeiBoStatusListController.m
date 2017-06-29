@@ -13,6 +13,7 @@
 
 @interface WeiBoStatusListController ()
 @property (nonatomic, strong) UIButton *btn;
+//TODO: chengk BaseViewController 维护一个请求队列，当取消的时候，将所有的请求取消
 @property (nonatomic, strong) WeiBoStatusListApi *statusApi;
 
 @end
@@ -22,21 +23,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.btn = ({
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(100, 100, 100, 100);
-        [self.view addSubview:btn];
-        [btn setTitle:@"click" forState:UIControlStateNormal];
-        btn;
-    });
-//
-//    
     self.view.backgroundColor = [UIColor greenColor];
     self.navigationController.navigationBar.hidden = NO;
-    [[self.navigationController rac_signalForSelector:@selector(popViewControllerAnimated:)] subscribeNext:^(RACTuple * _Nullable x) {
-        [self.statusApi stop];
-    }];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"back" style:UIBarButtonItemStylePlain target:self action:@selector(cancelNetWorkRequest)];
+    self.navigationItem.leftBarButtonItem = backItem;
     [self loadData];
+}
+
+- (void)cancelNetWorkRequest{
+    [self.statusApi stop];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)loadData{
@@ -48,12 +44,13 @@
     } failBlock:^(ResponseHead *head) {
         
     } requestFailBlock:^(NSError *error) {
-        
+        NSLog(@"statusApi error:%@",error);
     }];
     self.statusApi = statusApi;
 }
 
 - (void)dealloc{
+    
     NSLog(@"self.statusApi:%@",self.statusApi);
 }
 

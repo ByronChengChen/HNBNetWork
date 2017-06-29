@@ -7,17 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4420D9321F022DE2007DD6E9 /* HNBNetWork.h in Headers */ = {isa = PBXBuildFile; fileRef = 4420D9301F022DE2007DD6E9 /* HNBNetWork.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4420D93A1F022E16007DD6E9 /* BaseRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 4420D9381F022E16007DD6E9 /* BaseRequest.h */; };
-		4420D93B1F022E16007DD6E9 /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4420D9391F022E16007DD6E9 /* BaseRequest.m */; };
+		44F3AC541F04B270002E7DED /* BaseRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 44F3AC491F04B270002E7DED /* BaseRequest.h */; };
+		44F3AC551F04B270002E7DED /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F3AC4A1F04B270002E7DED /* BaseRequest.m */; };
+		44F3AC561F04B270002E7DED /* HNBConstantSymbol.h in Headers */ = {isa = PBXBuildFile; fileRef = 44F3AC4B1F04B270002E7DED /* HNBConstantSymbol.h */; };
+		44F3AC571F04B270002E7DED /* HNBNetWork.h in Headers */ = {isa = PBXBuildFile; fileRef = 44F3AC4C1F04B270002E7DED /* HNBNetWork.h */; };
+		44F3AC591F04B270002E7DED /* NSObject+HNB.h in Headers */ = {isa = PBXBuildFile; fileRef = 44F3AC4E1F04B270002E7DED /* NSObject+HNB.h */; };
+		44F3AC5A1F04B270002E7DED /* NSObject+HNB.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F3AC4F1F04B270002E7DED /* NSObject+HNB.m */; };
+		44F3AC5B1F04B270002E7DED /* RequestEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 44F3AC501F04B270002E7DED /* RequestEngine.h */; };
+		44F3AC5C1F04B270002E7DED /* RequestEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F3AC511F04B270002E7DED /* RequestEngine.m */; };
+		44F3AC5D1F04B270002E7DED /* ResponseHead.h in Headers */ = {isa = PBXBuildFile; fileRef = 44F3AC521F04B270002E7DED /* ResponseHead.h */; };
+		44F3AC5E1F04B270002E7DED /* ResponseHead.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F3AC531F04B270002E7DED /* ResponseHead.m */; };
+		44F3AC601F04B288002E7DED /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44F3AC5F1F04B288002E7DED /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4420D92D1F022DE2007DD6E9 /* HNBNetWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HNBNetWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4420D9301F022DE2007DD6E9 /* HNBNetWork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HNBNetWork.h; sourceTree = "<group>"; };
-		4420D9311F022DE2007DD6E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4420D9381F022E16007DD6E9 /* BaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequest.h; sourceTree = "<group>"; };
-		4420D9391F022E16007DD6E9 /* BaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequest.m; sourceTree = "<group>"; };
+		44F3AC491F04B270002E7DED /* BaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequest.h; sourceTree = "<group>"; };
+		44F3AC4A1F04B270002E7DED /* BaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequest.m; sourceTree = "<group>"; };
+		44F3AC4B1F04B270002E7DED /* HNBConstantSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNBConstantSymbol.h; sourceTree = "<group>"; };
+		44F3AC4C1F04B270002E7DED /* HNBNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNBNetWork.h; sourceTree = "<group>"; };
+		44F3AC4E1F04B270002E7DED /* NSObject+HNB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HNB.h"; sourceTree = "<group>"; };
+		44F3AC4F1F04B270002E7DED /* NSObject+HNB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HNB.m"; sourceTree = "<group>"; };
+		44F3AC501F04B270002E7DED /* RequestEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestEngine.h; sourceTree = "<group>"; };
+		44F3AC511F04B270002E7DED /* RequestEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestEngine.m; sourceTree = "<group>"; };
+		44F3AC521F04B270002E7DED /* ResponseHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseHead.h; sourceTree = "<group>"; };
+		44F3AC531F04B270002E7DED /* ResponseHead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseHead.m; sourceTree = "<group>"; };
+		44F3AC5F1F04B288002E7DED /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,10 +65,17 @@
 		4420D92F1F022DE2007DD6E9 /* HNBNetWork */ = {
 			isa = PBXGroup;
 			children = (
-				4420D9311F022DE2007DD6E9 /* Info.plist */,
-				4420D9301F022DE2007DD6E9 /* HNBNetWork.h */,
-				4420D9381F022E16007DD6E9 /* BaseRequest.h */,
-				4420D9391F022E16007DD6E9 /* BaseRequest.m */,
+				44F3AC5F1F04B288002E7DED /* Info.plist */,
+				44F3AC491F04B270002E7DED /* BaseRequest.h */,
+				44F3AC4A1F04B270002E7DED /* BaseRequest.m */,
+				44F3AC4B1F04B270002E7DED /* HNBConstantSymbol.h */,
+				44F3AC4C1F04B270002E7DED /* HNBNetWork.h */,
+				44F3AC4E1F04B270002E7DED /* NSObject+HNB.h */,
+				44F3AC4F1F04B270002E7DED /* NSObject+HNB.m */,
+				44F3AC501F04B270002E7DED /* RequestEngine.h */,
+				44F3AC511F04B270002E7DED /* RequestEngine.m */,
+				44F3AC521F04B270002E7DED /* ResponseHead.h */,
+				44F3AC531F04B270002E7DED /* ResponseHead.m */,
 			);
 			path = HNBNetWork;
 			sourceTree = "<group>";
@@ -65,8 +87,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4420D9321F022DE2007DD6E9 /* HNBNetWork.h in Headers */,
-				4420D93A1F022E16007DD6E9 /* BaseRequest.h in Headers */,
+				44F3AC541F04B270002E7DED /* BaseRequest.h in Headers */,
+				44F3AC5D1F04B270002E7DED /* ResponseHead.h in Headers */,
+				44F3AC571F04B270002E7DED /* HNBNetWork.h in Headers */,
+				44F3AC561F04B270002E7DED /* HNBConstantSymbol.h in Headers */,
+				44F3AC591F04B270002E7DED /* NSObject+HNB.h in Headers */,
+				44F3AC5B1F04B270002E7DED /* RequestEngine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44F3AC601F04B288002E7DED /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4420D93B1F022E16007DD6E9 /* BaseRequest.m in Sources */,
+				44F3AC5C1F04B270002E7DED /* RequestEngine.m in Sources */,
+				44F3AC5A1F04B270002E7DED /* NSObject+HNB.m in Sources */,
+				44F3AC5E1F04B270002E7DED /* ResponseHead.m in Sources */,
+				44F3AC551F04B270002E7DED /* BaseRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
