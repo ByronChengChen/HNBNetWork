@@ -29,7 +29,6 @@
 		4490A4EC1F03A676002D2810 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4490A4E81F03A676002D2810 /* MBProgressHUD.bundle */; };
 		4490A4ED1F03A676002D2810 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4490A4EA1F03A676002D2810 /* MBProgressHUD.m */; };
 		4490A4F31F03B787002D2810 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4490A4F21F03B787002D2810 /* Main.storyboard */; };
-		44F3AC381F04A024002E7DED /* LoginApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F3AC351F04A024002E7DED /* LoginApi.m */; };
 		44F3AC391F04A024002E7DED /* WeiBoAuthApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F3AC371F04A024002E7DED /* WeiBoAuthApi.m */; };
 		44F3AC3C1F04A049002E7DED /* WeiBoStatusListApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F3AC3B1F04A049002E7DED /* WeiBoStatusListApi.m */; };
 		44F3AC481F04A3D5002E7DED /* WeiBoStatusListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F3AC471F04A3D5002E7DED /* WeiBoStatusListController.m */; };
@@ -82,8 +81,6 @@
 		4490A4EA1F03A676002D2810 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		4490A4F11F03A9F2002D2810 /* HNBDemoConstantSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNBDemoConstantSymbol.h; sourceTree = "<group>"; };
 		4490A4F21F03B787002D2810 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		44F3AC341F04A024002E7DED /* LoginApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginApi.h; sourceTree = "<group>"; };
-		44F3AC351F04A024002E7DED /* LoginApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginApi.m; sourceTree = "<group>"; };
 		44F3AC361F04A024002E7DED /* WeiBoAuthApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiBoAuthApi.h; sourceTree = "<group>"; };
 		44F3AC371F04A024002E7DED /* WeiBoAuthApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiBoAuthApi.m; sourceTree = "<group>"; };
 		44F3AC3A1F04A049002E7DED /* WeiBoStatusListApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiBoStatusListApi.h; sourceTree = "<group>"; };
@@ -235,8 +232,6 @@
 		44F3AC331F04A024002E7DED /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				44F3AC341F04A024002E7DED /* LoginApi.h */,
-				44F3AC351F04A024002E7DED /* LoginApi.m */,
 				44F3AC361F04A024002E7DED /* WeiBoAuthApi.h */,
 				44F3AC371F04A024002E7DED /* WeiBoAuthApi.m */,
 				44F3AC3A1F04A049002E7DED /* WeiBoStatusListApi.h */,
@@ -410,7 +405,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4490A4EB1F03A676002D2810 /* MBProgressHUD+MJ.m in Sources */,
-				44F3AC381F04A024002E7DED /* LoginApi.m in Sources */,
 				4490A4E11F03A614002D2810 /* NSObject+MJCoding.m in Sources */,
 				4490A4DB1F03A614002D2810 /* MJExtensionConst.m in Sources */,
 				4490A4E01F03A614002D2810 /* NSObject+MJClass.m in Sources */,

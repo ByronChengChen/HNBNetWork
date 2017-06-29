@@ -85,30 +85,7 @@
     return task;
 }
 
-
 - (NSDictionary *)assembleParams:(NSDictionary*)param{
-//    NSString *token = @"";
-//    if (param[HNBConstantToken]) {
-//        if([param[HNBConstantToken] isKindOfClass:[NSString class]]){
-//        
-//        }
-//        token = param[HNBConstantToken];
-//    }
-//    NSString *build = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
-//    NSString *version = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
-//    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width * [UIScreen mainScreen].scale;
-//    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height * [UIScreen mainScreen].scale;
-//    NSString *deviceSystem = [NSString stringWithFormat:@"%@ %@", [UIDevice currentDevice].systemName, [UIDevice currentDevice].systemVersion];
-//    NSDictionary *requestHead = @{@"Version":version,   // APP 版本号
-//                                  @"Build": build,
-//                                  @"ScreenWidth":@(screenWidth),
-//                                  @"ScreenHeight":@(screenHeight),
-//                                  @"OSVersion": deviceSystem,
-//                                  @"DeviceType": [UIDevice currentDevice].model,
-//                                  @"AppType":@(2),   //2 表示iOS
-//                                  @"Token":token};
-//    NSDictionary *dict = @{@"Head":requestHead,
-//                           @"Content":param?(param):(@{})};
     NSDictionary *dict = param;
     return dict;
 }
