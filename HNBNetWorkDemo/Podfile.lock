@@ -16,15 +16,22 @@ PODS:
     - AFNetworking/NSURLSession
   - HNBNetWork (0.0.2):
     - AFNetworking (= 3.1.0)
+  - ReactiveObjC (3.0.0)
 
 DEPENDENCIES:
   - AFNetworking (= 3.1.0)
-  - HNBNetWork (= 0.0.2)
+  - HNBNetWork (from `../`)
+  - ReactiveObjC (= 3.0.0)
+
+EXTERNAL SOURCES:
+  HNBNetWork:
+    :path: ../
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   HNBNetWork: 4e09892e7968bba5f80b1985b1bd515e9253c516
+  ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
 
-PODFILE CHECKSUM: d82ba450481c786efa0f0e71bf375a1835e0adec
+PODFILE CHECKSUM: 083dfc916f4b06842d7b558bc40627739b6122f5
 
 COCOAPODS: 1.1.1

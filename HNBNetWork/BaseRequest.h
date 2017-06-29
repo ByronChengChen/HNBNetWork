@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HNBConstantSymbol.h"
 
 @interface BaseRequest : NSObject
+//@property (nonatomic,strong) NSMutableDictionary *params;
+
+- (NSURLSessionTask *)startWithSucessBlock:(SuccessBlock)successBlock failBlock:(FailBlock)failBlock requestFailBlock:(RequestFailBlock)requestFailBlock;
+
+- (NSString *)apiUrl;
+- (ApiMethord)apiMethord;
+- (NSInteger)timeOut;
+- (NSString *)baseUrl;
+- (void)stop;
 
 @end
