@@ -49,13 +49,13 @@
         default:
             break;
     }
-    NSLog(@"request:--------------\n method:%@,url:%@,\n params:%@",methordStr,url,params);
+    NSLog(@"request:--------------\n method:%@,url:%@,\n params:%@",methordStr,url,[self jsonString:params]);
     switch (baseRequest.apiMethord) {
         case APIGet:
         {
-            task = [manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            task = [manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * responseObject) {
                 successBlock(responseObject);
-                NSLog(@"reponse:++++++++++++++\n url:%@,\n params:%@,\n responseObject:%@",url,params,responseObject);
+                NSLog(@"reponse:++++++++++++++\n url:%@,\n params:%@,\n responseObject:%@",url,params,[self jsonString:responseObject]);
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 NSLog(@"error:%@",error);
                 //取消了就不回调了
@@ -68,7 +68,7 @@
         case APIPost:{
             task = [manager POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *responseObject) {
                 successBlock(responseObject);
-                NSLog(@"reponse:++++++++++++++\n url:%@,\n params:%@,\n responseObject:%@ ",url,params,responseObject);
+                NSLog(@"reponse:++++++++++++++\n url:%@,\n params:%@,\n responseObject:%@ ",url,params,[self jsonString:responseObject]);
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 NSLog(@"error:%@",error);
                 //取消了就不回调了
@@ -88,6 +88,18 @@
 - (NSDictionary *)assembleParams:(NSDictionary*)param{
     NSDictionary *dict = param;
     return dict;
+}
+
+- (NSString *)jsonString:(NSDictionary*)dict {
+    if(!dict)
+        return nil;
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    if (error) return nil;
+    NSString *json = [[NSString alloc] initWithData:jsonData  encoding:NSUTF8StringEncoding];
+    return json;
 }
 
 @end

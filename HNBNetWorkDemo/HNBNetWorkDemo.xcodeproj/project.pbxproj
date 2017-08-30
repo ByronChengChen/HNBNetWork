@@ -7,37 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		441A16641F05D9E20041260B /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 441A16631F05D9E20041260B /* BaseViewController.m */; };
+		441A16671F05DA460041260B /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 441A16661F05DA460041260B /* WeatherViewController.m */; };
+		441A166B1F05DD730041260B /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 441A166A1F05DD730041260B /* NSDictionary+Extension.m */; };
 		4420D8E31F022A56007DD6E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4420D8E21F022A56007DD6E9 /* main.m */; };
 		4420D8E61F022A56007DD6E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4420D8E51F022A56007DD6E9 /* AppDelegate.m */; };
 		4420D8E91F022A56007DD6E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4420D8E81F022A56007DD6E9 /* ViewController.m */; };
 		4420D8EE1F022A56007DD6E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4420D8ED1F022A56007DD6E9 /* Assets.xcassets */; };
 		4420D8F11F022A56007DD6E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4420D8EF1F022A56007DD6E9 /* LaunchScreen.storyboard */; };
-		4490A4C21F03A536002D2810 /* HWOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4490A4BB1F03A536002D2810 /* HWOAuthViewController.m */; };
-		4490A4C31F03A536002D2810 /* HWAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 4490A4BE1F03A536002D2810 /* HWAccount.m */; };
-		4490A4C41F03A536002D2810 /* HWAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4490A4C11F03A536002D2810 /* HWAccountTool.m */; };
-		4490A4DB1F03A614002D2810 /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 4490A4C81F03A614002D2810 /* MJExtensionConst.m */; };
-		4490A4DC1F03A614002D2810 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4490A4CA1F03A614002D2810 /* MJFoundation.m */; };
-		4490A4DD1F03A614002D2810 /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 4490A4CC1F03A614002D2810 /* MJProperty.m */; };
-		4490A4DE1F03A614002D2810 /* MJPropertyKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 4490A4CE1F03A614002D2810 /* MJPropertyKey.m */; };
-		4490A4DF1F03A614002D2810 /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4490A4D01F03A614002D2810 /* MJPropertyType.m */; };
-		4490A4E01F03A614002D2810 /* NSObject+MJClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4490A4D21F03A614002D2810 /* NSObject+MJClass.m */; };
-		4490A4E11F03A614002D2810 /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 4490A4D41F03A614002D2810 /* NSObject+MJCoding.m */; };
-		4490A4E21F03A614002D2810 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4490A4D61F03A614002D2810 /* NSObject+MJKeyValue.m */; };
-		4490A4E31F03A614002D2810 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 4490A4D81F03A614002D2810 /* NSObject+MJProperty.m */; };
-		4490A4E41F03A614002D2810 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4490A4DA1F03A614002D2810 /* NSString+MJExtension.m */; };
 		4490A4EB1F03A676002D2810 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 4490A4E71F03A676002D2810 /* MBProgressHUD+MJ.m */; };
 		4490A4EC1F03A676002D2810 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4490A4E81F03A676002D2810 /* MBProgressHUD.bundle */; };
 		4490A4ED1F03A676002D2810 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4490A4EA1F03A676002D2810 /* MBProgressHUD.m */; };
 		4490A4F31F03B787002D2810 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4490A4F21F03B787002D2810 /* Main.storyboard */; };
+		4499ABF71F0514A4001D3ED3 /* WeatherApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4499ABF61F0514A4001D3ED3 /* WeatherApi.m */; };
 		44F3AC391F04A024002E7DED /* WeiBoAuthApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F3AC371F04A024002E7DED /* WeiBoAuthApi.m */; };
 		44F3AC3C1F04A049002E7DED /* WeiBoStatusListApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F3AC3B1F04A049002E7DED /* WeiBoStatusListApi.m */; };
-		44F3AC481F04A3D5002E7DED /* WeiBoStatusListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F3AC471F04A3D5002E7DED /* WeiBoStatusListController.m */; };
 		5A76331CF216AB830C912B6F /* Pods_HNBNetWorkDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87325D9591F004751AA9391D /* Pods_HNBNetWorkDemo.framework */; };
+		6E93BA891F56D2A600DE587A /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93BA881F56D2A600DE587A /* BaseNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11E515B484F0E09A38C781B4 /* Pods-HNBNetWorkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HNBNetWorkDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HNBNetWorkDemo/Pods-HNBNetWorkDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		1DD58C1F7ADD5D5CBCF56158 /* Pods-HNBNetWorkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HNBNetWorkDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HNBNetWorkDemo/Pods-HNBNetWorkDemo.release.xcconfig"; sourceTree = "<group>"; };
+		441A16621F05D9E20041260B /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		441A16631F05D9E20041260B /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		441A16651F05DA460041260B /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
+		441A16661F05DA460041260B /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
+		441A16691F05DD730041260B /* NSDictionary+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extension.h"; sourceTree = "<group>"; };
+		441A166A1F05DD730041260B /* NSDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
+		441A166C1F05DE4B0041260B /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		4420D8DE1F022A56007DD6E9 /* HNBNetWorkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HNBNetWorkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4420D8E21F022A56007DD6E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4420D8E41F022A56007DD6E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,33 +45,6 @@
 		4420D8ED1F022A56007DD6E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4420D8F01F022A56007DD6E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4420D8F21F022A56007DD6E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4490A4BA1F03A536002D2810 /* HWOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWOAuthViewController.h; sourceTree = "<group>"; };
-		4490A4BB1F03A536002D2810 /* HWOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWOAuthViewController.m; sourceTree = "<group>"; };
-		4490A4BD1F03A536002D2810 /* HWAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWAccount.h; sourceTree = "<group>"; };
-		4490A4BE1F03A536002D2810 /* HWAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWAccount.m; sourceTree = "<group>"; };
-		4490A4C01F03A536002D2810 /* HWAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWAccountTool.h; sourceTree = "<group>"; };
-		4490A4C11F03A536002D2810 /* HWAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWAccountTool.m; sourceTree = "<group>"; };
-		4490A4C61F03A614002D2810 /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
-		4490A4C71F03A614002D2810 /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
-		4490A4C81F03A614002D2810 /* MJExtensionConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionConst.m; sourceTree = "<group>"; };
-		4490A4C91F03A614002D2810 /* MJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFoundation.h; sourceTree = "<group>"; };
-		4490A4CA1F03A614002D2810 /* MJFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
-		4490A4CB1F03A614002D2810 /* MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJProperty.h; sourceTree = "<group>"; };
-		4490A4CC1F03A614002D2810 /* MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJProperty.m; sourceTree = "<group>"; };
-		4490A4CD1F03A614002D2810 /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
-		4490A4CE1F03A614002D2810 /* MJPropertyKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyKey.m; sourceTree = "<group>"; };
-		4490A4CF1F03A614002D2810 /* MJPropertyType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyType.h; sourceTree = "<group>"; };
-		4490A4D01F03A614002D2810 /* MJPropertyType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyType.m; sourceTree = "<group>"; };
-		4490A4D11F03A614002D2810 /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
-		4490A4D21F03A614002D2810 /* NSObject+MJClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJClass.m"; sourceTree = "<group>"; };
-		4490A4D31F03A614002D2810 /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
-		4490A4D41F03A614002D2810 /* NSObject+MJCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJCoding.m"; sourceTree = "<group>"; };
-		4490A4D51F03A614002D2810 /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
-		4490A4D61F03A614002D2810 /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
-		4490A4D71F03A614002D2810 /* NSObject+MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJProperty.h"; sourceTree = "<group>"; };
-		4490A4D81F03A614002D2810 /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
-		4490A4D91F03A614002D2810 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
-		4490A4DA1F03A614002D2810 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
 		4490A4E61F03A676002D2810 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		4490A4E71F03A676002D2810 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		4490A4E81F03A676002D2810 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -81,12 +52,14 @@
 		4490A4EA1F03A676002D2810 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		4490A4F11F03A9F2002D2810 /* HNBDemoConstantSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNBDemoConstantSymbol.h; sourceTree = "<group>"; };
 		4490A4F21F03B787002D2810 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4499ABF51F0514A4001D3ED3 /* WeatherApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherApi.h; sourceTree = "<group>"; };
+		4499ABF61F0514A4001D3ED3 /* WeatherApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherApi.m; sourceTree = "<group>"; };
 		44F3AC361F04A024002E7DED /* WeiBoAuthApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiBoAuthApi.h; sourceTree = "<group>"; };
 		44F3AC371F04A024002E7DED /* WeiBoAuthApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiBoAuthApi.m; sourceTree = "<group>"; };
 		44F3AC3A1F04A049002E7DED /* WeiBoStatusListApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiBoStatusListApi.h; sourceTree = "<group>"; };
 		44F3AC3B1F04A049002E7DED /* WeiBoStatusListApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiBoStatusListApi.m; sourceTree = "<group>"; };
-		44F3AC461F04A3D5002E7DED /* WeiBoStatusListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiBoStatusListController.h; sourceTree = "<group>"; };
-		44F3AC471F04A3D5002E7DED /* WeiBoStatusListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiBoStatusListController.m; sourceTree = "<group>"; };
+		6E93BA871F56D2A600DE587A /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		6E93BA881F56D2A600DE587A /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		87325D9591F004751AA9391D /* Pods_HNBNetWorkDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HNBNetWorkDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -102,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		441A16681F05DD560041260B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				441A16691F05DD730041260B /* NSDictionary+Extension.h */,
+				441A166A1F05DD730041260B /* NSDictionary+Extension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		4420D8D51F022A56007DD6E9 = {
 			isa = PBXGroup;
 			children = (
@@ -123,13 +105,12 @@
 		4420D8E01F022A56007DD6E9 /* HNBNetWorkDemo */ = {
 			isa = PBXGroup;
 			children = (
+				441A16681F05DD560041260B /* Category */,
 				44F3AC3D1F04A34B002E7DED /* model */,
 				44F3AC3E1F04A350002E7DED /* view */,
 				44F3AC3F1F04A362002E7DED /* controller */,
 				44F3AC331F04A024002E7DED /* Api */,
 				4490A4E51F03A676002D2810 /* MBProgressHUD */,
-				4490A4C51F03A614002D2810 /* MJExtension */,
-				4490A4B81F03A536002D2810 /* OAuth(授权) */,
 				4420D8E41F022A56007DD6E9 /* AppDelegate.h */,
 				4420D8E51F022A56007DD6E9 /* AppDelegate.m */,
 				4420D8E71F022A56007DD6E9 /* ViewController.h */,
@@ -148,73 +129,9 @@
 			isa = PBXGroup;
 			children = (
 				4420D8E21F022A56007DD6E9 /* main.m */,
+				441A166C1F05DE4B0041260B /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4490A4B81F03A536002D2810 /* OAuth(授权) */ = {
-			isa = PBXGroup;
-			children = (
-				4490A4B91F03A536002D2810 /* Controller */,
-				4490A4BC1F03A536002D2810 /* Model */,
-				4490A4BF1F03A536002D2810 /* Tool */,
-			);
-			path = "OAuth(授权)";
-			sourceTree = "<group>";
-		};
-		4490A4B91F03A536002D2810 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				4490A4BA1F03A536002D2810 /* HWOAuthViewController.h */,
-				4490A4BB1F03A536002D2810 /* HWOAuthViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		4490A4BC1F03A536002D2810 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4490A4BD1F03A536002D2810 /* HWAccount.h */,
-				4490A4BE1F03A536002D2810 /* HWAccount.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		4490A4BF1F03A536002D2810 /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				4490A4C01F03A536002D2810 /* HWAccountTool.h */,
-				4490A4C11F03A536002D2810 /* HWAccountTool.m */,
-			);
-			path = Tool;
-			sourceTree = "<group>";
-		};
-		4490A4C51F03A614002D2810 /* MJExtension */ = {
-			isa = PBXGroup;
-			children = (
-				4490A4C61F03A614002D2810 /* MJExtension.h */,
-				4490A4C71F03A614002D2810 /* MJExtensionConst.h */,
-				4490A4C81F03A614002D2810 /* MJExtensionConst.m */,
-				4490A4C91F03A614002D2810 /* MJFoundation.h */,
-				4490A4CA1F03A614002D2810 /* MJFoundation.m */,
-				4490A4CB1F03A614002D2810 /* MJProperty.h */,
-				4490A4CC1F03A614002D2810 /* MJProperty.m */,
-				4490A4CD1F03A614002D2810 /* MJPropertyKey.h */,
-				4490A4CE1F03A614002D2810 /* MJPropertyKey.m */,
-				4490A4CF1F03A614002D2810 /* MJPropertyType.h */,
-				4490A4D01F03A614002D2810 /* MJPropertyType.m */,
-				4490A4D11F03A614002D2810 /* NSObject+MJClass.h */,
-				4490A4D21F03A614002D2810 /* NSObject+MJClass.m */,
-				4490A4D31F03A614002D2810 /* NSObject+MJCoding.h */,
-				4490A4D41F03A614002D2810 /* NSObject+MJCoding.m */,
-				4490A4D51F03A614002D2810 /* NSObject+MJKeyValue.h */,
-				4490A4D61F03A614002D2810 /* NSObject+MJKeyValue.m */,
-				4490A4D71F03A614002D2810 /* NSObject+MJProperty.h */,
-				4490A4D81F03A614002D2810 /* NSObject+MJProperty.m */,
-				4490A4D91F03A614002D2810 /* NSString+MJExtension.h */,
-				4490A4DA1F03A614002D2810 /* NSString+MJExtension.m */,
-			);
-			path = MJExtension;
 			sourceTree = "<group>";
 		};
 		4490A4E51F03A676002D2810 /* MBProgressHUD */ = {
@@ -232,6 +149,8 @@
 		44F3AC331F04A024002E7DED /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				4499ABF51F0514A4001D3ED3 /* WeatherApi.h */,
+				4499ABF61F0514A4001D3ED3 /* WeatherApi.m */,
 				44F3AC361F04A024002E7DED /* WeiBoAuthApi.h */,
 				44F3AC371F04A024002E7DED /* WeiBoAuthApi.m */,
 				44F3AC3A1F04A049002E7DED /* WeiBoStatusListApi.h */,
@@ -257,8 +176,12 @@
 		44F3AC3F1F04A362002E7DED /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				44F3AC461F04A3D5002E7DED /* WeiBoStatusListController.h */,
-				44F3AC471F04A3D5002E7DED /* WeiBoStatusListController.m */,
+				441A16621F05D9E20041260B /* BaseViewController.h */,
+				441A16631F05D9E20041260B /* BaseViewController.m */,
+				441A16651F05DA460041260B /* WeatherViewController.h */,
+				441A16661F05DA460041260B /* WeatherViewController.m */,
+				6E93BA871F56D2A600DE587A /* BaseNavigationController.h */,
+				6E93BA881F56D2A600DE587A /* BaseNavigationController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -314,7 +237,7 @@
 				TargetAttributes = {
 					4420D8DD1F022A56007DD6E9 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = E4RHLV9RJ8;
+						DevelopmentTeam = P833W8HAMH;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -379,7 +302,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FB0C0E747F64662C9F9BE0AE /* [CP] Copy Pods Resources */ = {
@@ -405,26 +328,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4490A4EB1F03A676002D2810 /* MBProgressHUD+MJ.m in Sources */,
-				4490A4E11F03A614002D2810 /* NSObject+MJCoding.m in Sources */,
-				4490A4DB1F03A614002D2810 /* MJExtensionConst.m in Sources */,
-				4490A4E01F03A614002D2810 /* NSObject+MJClass.m in Sources */,
-				4490A4DE1F03A614002D2810 /* MJPropertyKey.m in Sources */,
-				4490A4C41F03A536002D2810 /* HWAccountTool.m in Sources */,
-				4490A4C21F03A536002D2810 /* HWOAuthViewController.m in Sources */,
+				441A16641F05D9E20041260B /* BaseViewController.m in Sources */,
 				4490A4ED1F03A676002D2810 /* MBProgressHUD.m in Sources */,
+				441A16671F05DA460041260B /* WeatherViewController.m in Sources */,
 				44F3AC3C1F04A049002E7DED /* WeiBoStatusListApi.m in Sources */,
-				44F3AC481F04A3D5002E7DED /* WeiBoStatusListController.m in Sources */,
-				4490A4DD1F03A614002D2810 /* MJProperty.m in Sources */,
-				4490A4DC1F03A614002D2810 /* MJFoundation.m in Sources */,
+				4499ABF71F0514A4001D3ED3 /* WeatherApi.m in Sources */,
 				44F3AC391F04A024002E7DED /* WeiBoAuthApi.m in Sources */,
-				4490A4C31F03A536002D2810 /* HWAccount.m in Sources */,
 				4420D8E91F022A56007DD6E9 /* ViewController.m in Sources */,
-				4490A4DF1F03A614002D2810 /* MJPropertyType.m in Sources */,
+				6E93BA891F56D2A600DE587A /* BaseNavigationController.m in Sources */,
 				4420D8E61F022A56007DD6E9 /* AppDelegate.m in Sources */,
-				4490A4E21F03A614002D2810 /* NSObject+MJKeyValue.m in Sources */,
-				4490A4E41F03A614002D2810 /* NSString+MJExtension.m in Sources */,
 				4420D8E31F022A56007DD6E9 /* main.m in Sources */,
-				4490A4E31F03A614002D2810 /* NSObject+MJProperty.m in Sources */,
+				441A166B1F05DD730041260B /* NSDictionary+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,7 +451,9 @@
 			baseConfigurationReference = 11E515B484F0E09A38C781B4 /* Pods-HNBNetWorkDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E4RHLV9RJ8;
+				DEVELOPMENT_TEAM = P833W8HAMH;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HNBNetWorkDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = HNBNetWorkDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -551,7 +467,9 @@
 			baseConfigurationReference = 1DD58C1F7ADD5D5CBCF56158 /* Pods-HNBNetWorkDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E4RHLV9RJ8;
+				DEVELOPMENT_TEAM = P833W8HAMH;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HNBNetWorkDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = HNBNetWorkDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

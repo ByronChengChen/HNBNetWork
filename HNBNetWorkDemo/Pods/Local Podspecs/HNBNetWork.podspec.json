@@ -1,6 +1,6 @@
 {
   "name": "HNBNetWork",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "summary": "HNBNetWork is a high level request util based on AFNetworking.",
   "homepage": "https://github.com/ByronChengChen/HNBNetWork",
   "license": {
@@ -15,7 +15,7 @@
   },
   "source": {
     "git": "https://github.com/ByronChengChen/HNBNetWork.git",
-    "tag": "0.0.2"
+    "tag": "0.0.3"
   },
   "source_files": [
     "HNBNetWork",

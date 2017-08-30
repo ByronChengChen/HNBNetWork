@@ -7,9 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "HWAccountTool.h"
-#import "HWOAuthViewController.h"
 #import "ViewController.h"
+#import "BaseNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -20,20 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.window = [[UIWindow alloc] init];
-    self.window.frame = [UIScreen mainScreen].bounds;
-    
-    // 2.设置根控制器
-    HWAccount *account = [HWAccountTool account];
-    if (account) { // 之前已经登录成功过
-        ViewController *vc = [ViewController new];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-        self.window.rootViewController = nav;
-    } else {
-        self.window.rootViewController = [[HWOAuthViewController alloc] init];
-    }
-    
-    // 3.显示窗口
+    ViewController *vc = [ViewController new];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [[BaseNavigationController alloc] initWithRootViewController:vc];
     [self.window makeKeyAndVisible];
     return YES;
 }
