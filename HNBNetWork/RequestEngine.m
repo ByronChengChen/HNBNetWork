@@ -58,8 +58,8 @@
                 NSLog(@"reponse:++++++++++++++\n url:%@,\n params:%@,\n responseObject:%@",url,params,[self jsonString:responseObject]);
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 NSLog(@"error:%@",error);
-                //取消了就不回调了
-                if(-999 != error.code){
+                //取消了就不回调了 ,这里不该这样，应该让用户知道自己取消了网络请求。
+                if(NSURLErrorCancelled != error.code){
                     failBlock(error);
                 }
             }];
@@ -72,7 +72,7 @@
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 NSLog(@"error:%@",error);
                 //取消了就不回调了
-                if(-999 != error.code){
+                if(NSURLErrorCancelled != error.code){
                     failBlock(error);
                 }
             }];

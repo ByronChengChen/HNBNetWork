@@ -8,9 +8,22 @@
 
 #import <Foundation/Foundation.h>
 #import "HNBConstantSymbol.h"
+static NSString * const HNBResponseCacheDate = @"HNBResponseCacheDate";
+
+typedef NS_ENUM(NSUInteger, HNBRequestCachePolicy) {
+    /**
+     *  不适用缓存，默认
+     */
+    HNBRequestNoCachePolicy,
+    /**
+     *  缓存优先
+     */
+    HNBRequestCachePriorityPolicy
+};
 
 @interface BaseRequest : NSObject
 //@property (nonatomic,strong) NSMutableDictionary *params;
+@property (nonatomic, assign) HNBRequestCachePolicy cachePolicy;
 
 - (NSURLSessionTask *)startWithSucessBlock:(SuccessBlock)successBlock failBlock:(FailBlock)failBlock requestFailBlock:(RequestFailBlock)requestFailBlock;
 

@@ -22,8 +22,8 @@
     return APIGet;
 }
 
-//- (NSInteger)timeOut{
-//    return <#timeOut#>;
-//}
+- (HNBRequestCachePolicy)cachePolicy{
+    return HNBRequestCachePriorityPolicy;
+}
 
 @end

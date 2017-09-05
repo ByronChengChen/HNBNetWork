@@ -8,11 +8,13 @@
 
 #import "WeatherViewController.h"
 #import "WeatherApi.h"
+#import "BeiJingTimeApi.h"
 
 
 @interface WeatherViewController ()<UIAlertViewDelegate>
 @property (nonatomic, strong) UIButton *btn;
 @property (nonatomic, strong) NSString *status;
+@property (nonatomic, strong) UILabel *loadResponseDateLB;
 @end
 
 @implementation WeatherViewController
@@ -35,19 +37,30 @@
         btn;
     });
     
+    self.loadResponseDateLB = ({
+        UILabel *loadResponseDateLB = [UILabel new];
+        loadResponseDateLB.frame = CGRectMake(0, 200, 320 , 40);
+        [self.view addSubview:loadResponseDateLB];
+        loadResponseDateLB;
+    });
+    
 }
 
 - (void)loadData{
+    //    TODO: chengk 数据返回成当前时间的数据，不要使用天气数据，测试的现象不明显
     WeatherApi *weatherApi = [WeatherApi new];
     weatherApi.city = @"北京";
     [self startApi:weatherApi sucessBlock:^(NSDictionary *content, ResponseHead *head) {
-            [self.btn setTitle:[content[@"status"] stringValue] forState:UIControlStateNormal];
-            NSLog(@"self.btn.textChanged");
-        } failBlock:^(ResponseHead *head) {
-    
-        } requestFailBlock:^(NSError *error) {
-            
-        }];
+        [self.btn setTitle:[content[@"status"] stringValue] forState:UIControlStateNormal];
+        NSLog(@"self.btn.textChanged");
+        NSString *text = [NSString stringWithFormat:@"%@date%@",content[@"city"],content[HNBResponseCacheDate]];
+        self.loadResponseDateLB.text = text;
+        NSLog(@"text:%@",text);
+    } failBlock:^(ResponseHead *head) {
+        
+    } requestFailBlock:^(NSError *error) {
+        
+    }];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{

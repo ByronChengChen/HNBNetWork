@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "WeatherViewController.h"
+#import "BeiJingTimeController.h"
 
 typedef NS_ENUM(NSUInteger, CellType) {
     CellTypeList = 1
@@ -68,7 +69,8 @@ static NSString * const g_CellId = @"g_CellId";
     CellType type = indexPath.row + 1;
     switch (type) {
         case CellTypeList:{
-            WeatherViewController *vc = [WeatherViewController new];
+//            WeatherViewController *vc = [WeatherViewController new];
+            BeiJingTimeController *vc = [BeiJingTimeController new];
             [self.navigationController pushViewController:vc animated:YES];
         }
     }
