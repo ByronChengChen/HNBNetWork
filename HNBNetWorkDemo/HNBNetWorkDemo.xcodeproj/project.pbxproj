@@ -25,6 +25,9 @@
 		5A76331CF216AB830C912B6F /* Pods_HNBNetWorkDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87325D9591F004751AA9391D /* Pods_HNBNetWorkDemo.framework */; };
 		6E2418B41F5D6A9A00912E32 /* BeiJingTimeApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2418B31F5D6A9A00912E32 /* BeiJingTimeApi.m */; };
 		6E93BA891F56D2A600DE587A /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93BA881F56D2A600DE587A /* BaseNavigationController.m */; };
+		6EB0CF041F78E83100CCAC66 /* ErrorRecordApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB0CF031F78E83100CCAC66 /* ErrorRecordApi.m */; };
+		6EB0CF081F78E83C00CCAC66 /* BigFileUploadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB0CF061F78E83C00CCAC66 /* BigFileUploadController.m */; };
+		6EB0CF091F78E83C00CCAC66 /* BigFileUploadController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EB0CF071F78E83C00CCAC66 /* BigFileUploadController.xib */; };
 		6EDBC1F11F5E2E2800BA26AF /* BeiJingTimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDBC1EF1F5E2E2800BA26AF /* BeiJingTimeController.m */; };
 		6EDBC1F21F5E2E2800BA26AF /* BeiJingTimeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EDBC1F01F5E2E2800BA26AF /* BeiJingTimeController.xib */; };
 /* End PBXBuildFile section */
@@ -65,6 +68,11 @@
 		6E2418B31F5D6A9A00912E32 /* BeiJingTimeApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeiJingTimeApi.m; sourceTree = "<group>"; };
 		6E93BA871F56D2A600DE587A /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		6E93BA881F56D2A600DE587A /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		6EB0CF021F78E83100CCAC66 /* ErrorRecordApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorRecordApi.h; sourceTree = "<group>"; };
+		6EB0CF031F78E83100CCAC66 /* ErrorRecordApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorRecordApi.m; sourceTree = "<group>"; };
+		6EB0CF051F78E83C00CCAC66 /* BigFileUploadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigFileUploadController.h; sourceTree = "<group>"; };
+		6EB0CF061F78E83C00CCAC66 /* BigFileUploadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigFileUploadController.m; sourceTree = "<group>"; };
+		6EB0CF071F78E83C00CCAC66 /* BigFileUploadController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BigFileUploadController.xib; sourceTree = "<group>"; };
 		6EDBC1EE1F5E2E2800BA26AF /* BeiJingTimeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeiJingTimeController.h; sourceTree = "<group>"; };
 		6EDBC1EF1F5E2E2800BA26AF /* BeiJingTimeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeiJingTimeController.m; sourceTree = "<group>"; };
 		6EDBC1F01F5E2E2800BA26AF /* BeiJingTimeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeiJingTimeController.xib; sourceTree = "<group>"; };
@@ -157,6 +165,8 @@
 		44F3AC331F04A024002E7DED /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				6EB0CF021F78E83100CCAC66 /* ErrorRecordApi.h */,
+				6EB0CF031F78E83100CCAC66 /* ErrorRecordApi.m */,
 				4499ABF51F0514A4001D3ED3 /* WeatherApi.h */,
 				4499ABF61F0514A4001D3ED3 /* WeatherApi.m */,
 				44F3AC361F04A024002E7DED /* WeiBoAuthApi.h */,
@@ -186,6 +196,9 @@
 		44F3AC3F1F04A362002E7DED /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				6EB0CF051F78E83C00CCAC66 /* BigFileUploadController.h */,
+				6EB0CF061F78E83C00CCAC66 /* BigFileUploadController.m */,
+				6EB0CF071F78E83C00CCAC66 /* BigFileUploadController.xib */,
 				441A16621F05D9E20041260B /* BaseViewController.h */,
 				441A16631F05D9E20041260B /* BaseViewController.m */,
 				441A16651F05DA460041260B /* WeatherViewController.h */,
@@ -278,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4420D8F11F022A56007DD6E9 /* LaunchScreen.storyboard in Resources */,
+				6EB0CF091F78E83C00CCAC66 /* BigFileUploadController.xib in Resources */,
 				6EDBC1F21F5E2E2800BA26AF /* BeiJingTimeController.xib in Resources */,
 				4490A4EC1F03A676002D2810 /* MBProgressHUD.bundle in Resources */,
 				4420D8EE1F022A56007DD6E9 /* Assets.xcassets in Resources */,
@@ -354,6 +368,8 @@
 				4420D8E31F022A56007DD6E9 /* main.m in Sources */,
 				441A166B1F05DD730041260B /* NSDictionary+Extension.m in Sources */,
 				6E2418B41F5D6A9A00912E32 /* BeiJingTimeApi.m in Sources */,
+				6EB0CF041F78E83100CCAC66 /* ErrorRecordApi.m in Sources */,
+				6EB0CF081F78E83C00CCAC66 /* BigFileUploadController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

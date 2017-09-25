@@ -8,14 +8,13 @@
 
 #import "BaseViewController.h"
 #import <pthread/pthread.h>
+#import "NSObject+HNB.h"
 #define Lock() pthread_mutex_lock(&_lock)
 #define Unlock() pthread_mutex_unlock(&_lock)
 
 @interface BaseViewController (){
     pthread_mutex_t _lock;
 }
-@property (nonatomic, weak) NSURLSessionTask *task;
-
 @end
 
 @implementation BaseViewController
@@ -37,19 +36,18 @@
     __block NSURLSessionTask *task = [api startWithSucessBlock:^(id content, ResponseHead *head) {
         successBlock(content,head);
         [weakSelf.requestsRecord removeObjectForKey:@(task.taskIdentifier)];
-        LogResponseGreen(@"callBack success weakSelf.requestsRecord:%@",weakSelf.requestsRecord);
+        LogResponseGreen(@"callBack business success weakSelf.requestsRecord:%@ content:%@",weakSelf.requestsRecord,[content jsonString] );
     } failBlock:^(ResponseHead *head) {
         failBlock(head);
         [weakSelf.requestsRecord removeObjectForKey:@(task.taskIdentifier)];
-        LogResponseRed(@"callBack business failed weakSelf.requestsRecord:%@",weakSelf.requestsRecord);
+        LogResponseRed(@"callBack business failed weakSelf.requestsRecord:%@ head:%@",weakSelf.requestsRecord,[head keyAndVaules]);
     } requestFailBlock:^(NSError *error) {
         requestFailBlock(error);
         [weakSelf.requestsRecord removeObjectForKey:@(task.taskIdentifier)];
-        LogResponseRed(@"callBack netWork failed weakSelf.requestsRecord:%@",weakSelf.requestsRecord);
+        LogResponseRed(@"callBack netWork failed weakSelf.requestsRecord:%@ error:%@",weakSelf.requestsRecord,error);
     }];
     self.requestsRecord[@(task.taskIdentifier)] = api;
     LogRequestBlue(@"add request weakSelf.requestsRecord:%@",weakSelf.requestsRecord);
-    self.task = task;
 }
 
 - (void)viewDidDisappear:(BOOL)animated{
@@ -79,5 +77,19 @@
 - (void)dealloc{
     [self stopAllRequest];
 }
+
+//TODO: chengk 网络请求，http请求头自定义 1 这里的jsonString方法需要抽出
+- (NSString *)jsonString:(NSDictionary*)dict {
+    if(!dict)
+        return nil;
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    if (error) return nil;
+    NSString *json = [[NSString alloc] initWithData:jsonData  encoding:NSUTF8StringEncoding];
+    return json;
+}
+
 
 @end

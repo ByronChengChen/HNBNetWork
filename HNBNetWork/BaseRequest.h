@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HNBConstantSymbol.h"
+#import <AFNetworking/AFNetworking.h>
 static NSString * const HNBResponseCacheDate = @"HNBResponseCacheDate";
 
 typedef NS_ENUM(NSUInteger, HNBRequestCachePolicy) {
@@ -26,6 +27,9 @@ typedef NS_ENUM(NSUInteger, HNBRequestCachePolicy) {
 @property (nonatomic, assign) HNBRequestCachePolicy cachePolicy;
 
 - (NSURLSessionTask *)startWithSucessBlock:(SuccessBlock)successBlock failBlock:(FailBlock)failBlock requestFailBlock:(RequestFailBlock)requestFailBlock;
+//指定请求的方式，默认请求序列为json
+- (AFHTTPRequestSerializer *)hnbRequestSerializerType;
+- (NSDictionary *)httpHeaderDict;
 
 - (NSString *)apiUrl;
 - (ApiMethord)apiMethord;

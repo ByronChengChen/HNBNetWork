@@ -197,4 +197,8 @@ static NSString * const HNBResponsCachePath = @"HNBResponsCachePath";
     return 60 * 1;
 }
 
+- (AFHTTPRequestSerializer *)hnbRequestSerializerType{
+    return [AFJSONRequestSerializer serializer];
+}
+
 @end

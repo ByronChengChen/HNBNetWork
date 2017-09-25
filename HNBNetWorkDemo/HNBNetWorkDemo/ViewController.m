@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "WeatherViewController.h"
 #import "BeiJingTimeController.h"
+#import "BigFileUploadController.h"
 
 typedef NS_ENUM(NSUInteger, CellType) {
     CellTypeList = 1
@@ -71,6 +72,7 @@ static NSString * const g_CellId = @"g_CellId";
         case CellTypeList:{
 //            WeatherViewController *vc = [WeatherViewController new];
             BeiJingTimeController *vc = [BeiJingTimeController new];
+//            BigFileUploadController *vc = [BigFileUploadController new];
             [self.navigationController pushViewController:vc animated:YES];
         }
     }

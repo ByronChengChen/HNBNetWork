@@ -47,7 +47,7 @@
 }
 
 - (void)loadData{
-    //    TODO: chengk 数据返回成当前时间的数据，不要使用天气数据，测试的现象不明显
+    //数据返回成当前时间的数据，不要使用天气数据，测试的现象不明显
     WeatherApi *weatherApi = [WeatherApi new];
     weatherApi.city = @"北京";
     [self startApi:weatherApi sucessBlock:^(NSDictionary *content, ResponseHead *head) {
