@@ -20,8 +20,6 @@
 		4490A4ED1F03A676002D2810 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4490A4EA1F03A676002D2810 /* MBProgressHUD.m */; };
 		4490A4F31F03B787002D2810 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4490A4F21F03B787002D2810 /* Main.storyboard */; };
 		4499ABF71F0514A4001D3ED3 /* WeatherApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4499ABF61F0514A4001D3ED3 /* WeatherApi.m */; };
-		44F3AC391F04A024002E7DED /* WeiBoAuthApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F3AC371F04A024002E7DED /* WeiBoAuthApi.m */; };
-		44F3AC3C1F04A049002E7DED /* WeiBoStatusListApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F3AC3B1F04A049002E7DED /* WeiBoStatusListApi.m */; };
 		5A76331CF216AB830C912B6F /* Pods_HNBNetWorkDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87325D9591F004751AA9391D /* Pods_HNBNetWorkDemo.framework */; };
 		6E2418B41F5D6A9A00912E32 /* BeiJingTimeApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2418B31F5D6A9A00912E32 /* BeiJingTimeApi.m */; };
 		6E93BA891F56D2A600DE587A /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E93BA881F56D2A600DE587A /* BaseNavigationController.m */; };
@@ -60,10 +58,6 @@
 		4490A4F21F03B787002D2810 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4499ABF51F0514A4001D3ED3 /* WeatherApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherApi.h; sourceTree = "<group>"; };
 		4499ABF61F0514A4001D3ED3 /* WeatherApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherApi.m; sourceTree = "<group>"; };
-		44F3AC361F04A024002E7DED /* WeiBoAuthApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiBoAuthApi.h; sourceTree = "<group>"; };
-		44F3AC371F04A024002E7DED /* WeiBoAuthApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiBoAuthApi.m; sourceTree = "<group>"; };
-		44F3AC3A1F04A049002E7DED /* WeiBoStatusListApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiBoStatusListApi.h; sourceTree = "<group>"; };
-		44F3AC3B1F04A049002E7DED /* WeiBoStatusListApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiBoStatusListApi.m; sourceTree = "<group>"; };
 		6E2418B21F5D6A9A00912E32 /* BeiJingTimeApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeiJingTimeApi.h; sourceTree = "<group>"; };
 		6E2418B31F5D6A9A00912E32 /* BeiJingTimeApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeiJingTimeApi.m; sourceTree = "<group>"; };
 		6E93BA871F56D2A600DE587A /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
@@ -169,10 +163,6 @@
 				6EB0CF031F78E83100CCAC66 /* ErrorRecordApi.m */,
 				4499ABF51F0514A4001D3ED3 /* WeatherApi.h */,
 				4499ABF61F0514A4001D3ED3 /* WeatherApi.m */,
-				44F3AC361F04A024002E7DED /* WeiBoAuthApi.h */,
-				44F3AC371F04A024002E7DED /* WeiBoAuthApi.m */,
-				44F3AC3A1F04A049002E7DED /* WeiBoStatusListApi.h */,
-				44F3AC3B1F04A049002E7DED /* WeiBoStatusListApi.m */,
 				6E2418B21F5D6A9A00912E32 /* BeiJingTimeApi.h */,
 				6E2418B31F5D6A9A00912E32 /* BeiJingTimeApi.m */,
 			);
@@ -359,9 +349,7 @@
 				441A16641F05D9E20041260B /* BaseViewController.m in Sources */,
 				4490A4ED1F03A676002D2810 /* MBProgressHUD.m in Sources */,
 				441A16671F05DA460041260B /* WeatherViewController.m in Sources */,
-				44F3AC3C1F04A049002E7DED /* WeiBoStatusListApi.m in Sources */,
 				4499ABF71F0514A4001D3ED3 /* WeatherApi.m in Sources */,
-				44F3AC391F04A024002E7DED /* WeiBoAuthApi.m in Sources */,
 				4420D8E91F022A56007DD6E9 /* ViewController.m in Sources */,
 				6E93BA891F56D2A600DE587A /* BaseNavigationController.m in Sources */,
 				4420D8E61F022A56007DD6E9 /* AppDelegate.m in Sources */,
