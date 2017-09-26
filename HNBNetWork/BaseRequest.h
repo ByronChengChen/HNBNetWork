@@ -13,7 +13,7 @@ static NSString * const HNBResponseCacheDate = @"HNBResponseCacheDate";
 
 typedef NS_ENUM(NSUInteger, HNBRequestCachePolicy) {
     /**
-     *  不适用缓存，默认
+     *  不使用缓存，默认
      */
     HNBRequestNoCachePolicy,
     /**
@@ -23,18 +23,37 @@ typedef NS_ENUM(NSUInteger, HNBRequestCachePolicy) {
 };
 
 @interface BaseRequest : NSObject
-//@property (nonatomic,strong) NSMutableDictionary *params;
 @property (nonatomic, assign) HNBRequestCachePolicy cachePolicy;
+@property (nonatomic, strong) NSURLSessionTask *task;
+- (NSURLSessionTask *)hnbStartWithSucessBlock:(NetWorkSuccessBlock)successBlock requestFailBlock:(RequestFailBlock)requestFailBlock;
 
-- (NSURLSessionTask *)startWithSucessBlock:(SuccessBlock)successBlock failBlock:(FailBlock)failBlock requestFailBlock:(RequestFailBlock)requestFailBlock;
-//指定请求的方式，默认请求序列为json
-- (AFHTTPRequestSerializer *)hnbRequestSerializerType;
+//rquest methord begin
+/**
+ *  指定http请求头，抽象方法，本类不实现，子类实现
+ */
 - (NSDictionary *)httpHeaderDict;
+
+/**
+ * 对于某些业务，需要在params里面包一层数据，例如需要在请求体里面加上token之类的操作，抽象方法，本类不实现，子类实现
+ */
+- (NSMutableDictionary *)assembleParams:(NSMutableDictionary*)param;
+
+/**
+ *  指定请求的方式，默认请求序列为json
+ */
+- (AFHTTPRequestSerializer *)hnbRequestSerializerType;
+
+/**
+ *  告知如何通过缓存刷新页面，抽象方法
+ */
+- (void)loadCacheWithData:(id)cacheDate;
 
 - (NSString *)apiUrl;
 - (ApiMethord)apiMethord;
 - (NSInteger)timeOut;
 - (NSString *)baseUrl;
+//rquest methord end
+
 - (void)stop;
 
 @end

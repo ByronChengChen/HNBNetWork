@@ -29,7 +29,7 @@
 - (IBAction)uploadAction:(id)sender {
     ErrorRecordApi *api = [ErrorRecordApi new];
     api.date = @"2017.09.25";
-    [self startApi:api sucessBlock:^(id content, ResponseHead *head) {
+    [self startApi:api sucessBlock:^(id content) {
         
     } failBlock:^(ResponseHead *head) {
         
@@ -38,6 +38,10 @@
     }];
     //TODO: chengk 解决内容较大的异常数据上传
     
+}
+
+- (HNBRequestCachePolicy)cachePolicy{
+    return HNBRequestCachePriorityPolicy;
 }
 
 @end

@@ -29,7 +29,7 @@
 
 - (IBAction)clickAction:(id)sender {
     BeiJingTimeApi *api = [BeiJingTimeApi new];
-    [self startApi:api sucessBlock:^(id content, ResponseHead *head) {
+    [self startApi:api sucessBlock:^(id content) {
         self.timeLB.text = content[@"result"][@"datetime_2"];
     } failBlock:^(ResponseHead *head) {
         

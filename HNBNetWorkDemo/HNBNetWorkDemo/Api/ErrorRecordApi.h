@@ -11,6 +11,6 @@
 /**
  *  这里的请求使用的不是 AFJSONResponseSerializer方式，而是AFHTTPRequestSerializer方式
  */
-@interface ErrorRecordApi : BaseRequest
+@interface ErrorRecordApi : BaseBusinessRequest
 @property (nonatomic, strong) NSString *date;
 @end

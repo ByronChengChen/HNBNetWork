@@ -31,16 +31,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)startApi:(BaseRequest*)api sucessBlock:(SuccessBlock)successBlock failBlock:(FailBlock)failBlock requestFailBlock:(RequestFailBlock)requestFailBlock{
+- (void)startApi:(BaseBusinessRequest*)api sucessBlock:(SuccessBlock)successBlock failBlock:(FailBlock)failBlock requestFailBlock:(RequestFailBlock)requestFailBlock{
     WS
-    __block NSURLSessionTask *task = [api startWithSucessBlock:^(id content, ResponseHead *head) {
-        successBlock(content,head);
+    __block NSURLSessionTask *task = [api startWithSucessBlock:^(id content) {
+        successBlock(content);
         [weakSelf.requestsRecord removeObjectForKey:@(task.taskIdentifier)];
-        LogResponseGreen(@"callBack business success weakSelf.requestsRecord:%@ content:%@",weakSelf.requestsRecord,[content jsonString] );
+        LogResponseGreen(@"callBack business success weakSelf.requestsRecord:%@ content:%@",weakSelf.requestsRecord,[content jsonString]);
     } failBlock:^(ResponseHead *head) {
         failBlock(head);
         [weakSelf.requestsRecord removeObjectForKey:@(task.taskIdentifier)];
-        LogResponseRed(@"callBack business failed weakSelf.requestsRecord:%@ head:%@",weakSelf.requestsRecord,[head keyAndVaules]);
+        LogResponseRed(@"callBack business failed weakSelf.requestsRecord:%@ head:%@",weakSelf.requestsRecord,[[head keyAndVaules] jsonString]);
     } requestFailBlock:^(NSError *error) {
         requestFailBlock(error);
         [weakSelf.requestsRecord removeObjectForKey:@(task.taskIdentifier)];
@@ -78,7 +78,7 @@
     [self stopAllRequest];
 }
 
-//TODO: chengk 网络请求，http请求头自定义 1 这里的jsonString方法需要抽出
+//TODO: chengk 网络请求 2 http请求头自定义 这里的jsonString方法需要抽出
 - (NSString *)jsonString:(NSDictionary*)dict {
     if(!dict)
         return nil;

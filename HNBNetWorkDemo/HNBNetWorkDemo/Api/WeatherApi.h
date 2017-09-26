@@ -8,7 +8,7 @@
 
 #import <HNBNetWork/HNBNetWork.h>
 
-@interface WeatherApi : BaseRequest
+@interface WeatherApi : BaseBusinessRequest
 
 @property (nonatomic,strong) NSString *city;
 

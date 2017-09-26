@@ -8,6 +8,6 @@
 
 #import <HNBNetWork/HNBNetWork.h>
 
-@interface BeiJingTimeApi : BaseRequest
+@interface BeiJingTimeApi : BaseBusinessRequest
 
 @end

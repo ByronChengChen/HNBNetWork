@@ -10,6 +10,7 @@
 #define PrefixHeader_pch
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "NSDictionary+Extension.h"
+#import "BaseBusinessRequest.h"
 
 #ifdef DEBUG
 #define NSLog(format, ...) NSLog(format, ## __VA_ARGS__)

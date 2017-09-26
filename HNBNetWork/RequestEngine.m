@@ -22,14 +22,14 @@
 }
 
 - (NSURLSessionTask *)addRequest:(BaseRequest*)baseRequest
-                   successBlock:(IdBlock)successBlock
+                   successBlock:(NetWorkSuccessBlock)successBlock
                    requestFailBlock:(RequestFailBlock)failBlock{
     NSURLSessionTask *task = nil;
     task = [self sessionTaskFotRequest:baseRequest successBlock:successBlock requestFailBlock:failBlock];
     return task;
 }
 
-- (NSURLSessionTask *)sessionTaskFotRequest:(BaseRequest*)baseRequest successBlock:(IdBlock)successBlock requestFailBlock:(RequestFailBlock)failBlock{
+- (NSURLSessionTask *)sessionTaskFotRequest:(BaseRequest*)baseRequest successBlock:(NetWorkSuccessBlock)successBlock requestFailBlock:(RequestFailBlock)failBlock{
     NSURLSessionTask *task = nil;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
@@ -49,7 +49,11 @@
         }
     }
     NSString *url = [NSString stringWithFormat:@"%@/%@",baseRequest.baseUrl,baseRequest.apiUrl];
-    NSDictionary *params = [self assembleParams:(NSMutableDictionary*)baseRequest.keyAndVaules];
+    NSDictionary *params = baseRequest.keyAndVaules;
+    if([baseRequest respondsToSelector:@selector(assembleParams:)]){
+        params = [baseRequest assembleParams:(NSMutableDictionary *)params];
+    }
+    
     //TODO: chengk 待优化 颜色打印
     NSString *methordStr = nil;
     switch (baseRequest.apiMethord) {
@@ -119,7 +123,7 @@
 {
     //AFJSONResponseSerializer 才需要使用到字典，AFPropertyListRequestSerializer 是plist方式，暂不处理
     BOOL paramSouldUseDictFlag = NO;
-    if([manager.requestSerializer isKindOfClass:[AFJSONResponseSerializer class]]){
+    if([manager.requestSerializer isKindOfClass:[AFJSONRequestSerializer class]]){
         paramSouldUseDictFlag = YES;
     }
     if([manager.requestSerializer isKindOfClass:[AFPropertyListRequestSerializer class]]){
@@ -145,12 +149,7 @@
     }];
 }
 
-- (NSDictionary *)assembleParams:(NSDictionary*)param{
-    NSDictionary *dict = param;
-    return dict;
-}
-
-//TODO: chengk 网络请求，http请求头自定义 1 这里的jsonString方法需要抽出
+//TODO: chengk 网络请求 1 http请求头自定义 这里的jsonString方法需要抽出
 - (NSString *)jsonString:(NSDictionary*)dict {
     if(!dict)
         return nil;

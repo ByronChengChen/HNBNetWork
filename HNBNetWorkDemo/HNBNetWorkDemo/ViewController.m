@@ -71,8 +71,8 @@ static NSString * const g_CellId = @"g_CellId";
     switch (type) {
         case CellTypeList:{
 //            WeatherViewController *vc = [WeatherViewController new];
-            BeiJingTimeController *vc = [BeiJingTimeController new];
-//            BigFileUploadController *vc = [BigFileUploadController new];
+//            BeiJingTimeController *vc = [BeiJingTimeController new];
+            BigFileUploadController *vc = [BigFileUploadController new];
             [self.navigationController pushViewController:vc animated:YES];
         }
     }

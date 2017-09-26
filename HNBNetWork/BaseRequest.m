@@ -15,7 +15,7 @@ static NSString * const HNBResponsCachePath = @"HNBResponsCachePath";
 
 
 @interface BaseRequest()
-@property (nonatomic, strong) NSURLSessionTask *task;
+
 
 @end
 
@@ -44,34 +44,13 @@ static NSString * const HNBResponsCachePath = @"HNBResponsCachePath";
     return self;
 }
 
-//基类方法中默认
-- (NSString *)baseUrl{
-    return @"https://www.baidu.com";
-}
-
-- (NSString*)apiUrl{
-    return @"";
-}
-
-- (ApiMethord)apiMethord{
-    return APIPost;
-}
-
-- (NSInteger)timeOut{
-    return 20;
-}
-
-- (NSURLSessionTask *)startWithSucessBlock:(SuccessBlock)successBlock failBlock:(FailBlock)failBlock requestFailBlock:(RequestFailBlock)requestFailBlock{
+#pragma mark -缓存策略
+- (NSURLSessionTask *)hnbStartWithSucessBlock:(NetWorkSuccessBlock)successBlock requestFailBlock:(RequestFailBlock)requestFailBlock{
     NSURLSessionTask *task = nil;
-    [self loadCachedDataIfNeedWithSuccessBlock:successBlock failBlock:failBlock];
+    [self loadCachedData];
     task = [[RequestEngine sharedEngine] addRequest:self successBlock:^(NSDictionary *content) {
-        //TODO: chengk 未来这里提供一个对外方法，用来验证业务请求成功
-        ResponseHead *head = [[ResponseHead alloc] init];
-        [head setValuesForKeysWithDictionary:content[@"Head"]];
-        if(0 == head.code || (content[@"success"] && [content[@"success"] intValue] == 1)){
-            successBlock(content,head);
-        }else{
-            failBlock(head);
+        if(successBlock){
+            successBlock(content);
         }
         [self saveCacheWithContent:content];
     }  requestFailBlock:^(NSError *error){
@@ -82,20 +61,17 @@ static NSString * const HNBResponsCachePath = @"HNBResponsCachePath";
     return task;
 }
 
-- (void)stop{
-    if(self.task){
-        [self.task cancel];
-    }
-}
-
 - (void)saveCacheWithContent:(NSDictionary *)content{
     BOOL requestCached = ((BaseRequest *)self).cachePolicy == HNBRequestCachePriorityPolicy ? YES : NO;
     if(requestCached){
         // 缓存策略 1 存储缓存
         if([self cacheTimeInSeconds] > 0){
             NSMutableDictionary *dic= [NSMutableDictionary dictionaryWithDictionary:content];
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
             NSDate *cacheTime = [NSDate date];
-            dic[HNBResponseCacheDate] = cacheTime;
+            NSString *strDate = [dateFormatter stringFromDate:cacheTime];
+            dic[HNBResponseCacheDate] = strDate;
             if (dic != nil) {
                 @try {
                     
@@ -112,7 +88,7 @@ static NSString * const HNBResponsCachePath = @"HNBResponsCachePath";
     }
 }
 
-- (void)loadCachedDataIfNeedWithSuccessBlock:(SuccessBlock)successBlock failBlock:(FailBlock)failBlock{
+- (void)loadCachedData{
     BOOL requestCached = ((BaseRequest *)self).cachePolicy == HNBRequestCachePriorityPolicy ? YES : NO;
     if(requestCached){
         //缓存策略 2 如果存在缓存，读取缓存数据
@@ -121,7 +97,13 @@ static NSString * const HNBResponsCachePath = @"HNBResponsCachePath";
             return;
         }
         NSMutableDictionary *mutDict = [NSMutableDictionary dictionaryWithDictionary:dic];
-        NSDate *date = mutDict[HNBResponseCacheDate];
+        NSString *dateStr = mutDict[HNBResponseCacheDate];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        NSDate *date = nil;
+        if([dateStr isKindOfClass:[NSString class]]){
+            date = [dateFormatter dateFromString:dateStr];
+        }
         BOOL cacheTimeOut = NO;
         if(date){
             NSTimeInterval duration = -[date timeIntervalSinceNow];
@@ -130,16 +112,12 @@ static NSString * const HNBResponsCachePath = @"HNBResponsCachePath";
                 cacheTimeOut = YES;
                 [self clearCachedData];
                 return;
+            }else{
+                NSDictionary *cachedResponseObject = dic;
+                if([self respondsToSelector:@selector(loadCacheWithData:)]){
+                    [self loadCacheWithData:cachedResponseObject];
+                }
             }
-        }
-        
-        ResponseHead *head = [[ResponseHead alloc] init];
-        NSDictionary *cachedResponseObject = dic;
-        [head setValuesForKeysWithDictionary:cachedResponseObject[@"Head"]];
-        if(0 == head.code || (cachedResponseObject[@"success"] && [cachedResponseObject[@"success"] intValue] == 1)){
-            successBlock(cachedResponseObject,head);
-        }else{
-            failBlock(head);
         }
     }
 }
@@ -197,8 +175,33 @@ static NSString * const HNBResponsCachePath = @"HNBResponsCachePath";
     return 60 * 1;
 }
 
+#pragma mark -抽象方法，子类可能会覆盖
 - (AFHTTPRequestSerializer *)hnbRequestSerializerType{
     return [AFJSONRequestSerializer serializer];
+}
+
+//基类方法中默认
+- (NSString *)baseUrl{
+    return @"https://www.baidu.com";
+}
+
+- (NSString*)apiUrl{
+    return @"";
+}
+
+- (ApiMethord)apiMethord{
+    return APIPost;
+}
+
+- (NSInteger)timeOut{
+    return 20;
+}
+
+#pragma mark -stop
+- (void)stop{
+    if(self.task){
+        [self.task cancel];
+    }
 }
 
 @end

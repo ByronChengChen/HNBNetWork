@@ -25,9 +25,7 @@ typedef NS_ENUM(NSUInteger, ApiMethord) {
      */
     APIPost
 };
-typedef void(^IdBlock)(id content);
-typedef void(^SuccessBlock)(id content, ResponseHead *head);
-typedef void(^FailBlock)(ResponseHead *head);
+typedef void(^NetWorkSuccessBlock)(id content);
 typedef void(^RequestFailBlock)(NSError *error);
 
 #endif /* HNBConstantSymbol_h */

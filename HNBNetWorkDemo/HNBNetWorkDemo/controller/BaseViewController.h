@@ -10,9 +10,9 @@
 #import <HNBNetWork/HNBNetWork.h>
 
 @interface BaseViewController : UIViewController
-@property (nonatomic,strong) NSMutableDictionary<NSNumber *, BaseRequest *> *requestsRecord;
+@property (nonatomic,strong) NSMutableDictionary<NSNumber *, BaseBusinessRequest *> *requestsRecord;
 
 - (void)stopAllRequest;
 
-- (void)startApi:(BaseRequest*)api sucessBlock:(SuccessBlock)successBlock failBlock:(FailBlock)failBlock requestFailBlock:(RequestFailBlock)requestFailBlock;
+- (void)startApi:(BaseBusinessRequest*)api sucessBlock:(SuccessBlock)successBlock failBlock:(FailBlock)failBlock requestFailBlock:(RequestFailBlock)requestFailBlock;
 @end

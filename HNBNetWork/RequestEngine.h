@@ -14,11 +14,6 @@
 + (instancetype)sharedEngine;
 
 -(NSURLSessionTask *)addRequest:(BaseRequest*)baseRequest
-                          successBlock:(IdBlock)successBlock
+                          successBlock:(NetWorkSuccessBlock)successBlock
                           requestFailBlock:(RequestFailBlock)failBlock;
-/**
- * 每个公司组织请求的方式可能有不同，在这个方法中重写一下，改成豆瓣的
- */
-//TODO: chengk 完成后，将这个改成豆瓣的
-- (NSMutableDictionary *)assembleParams:(NSMutableDictionary*)param;
 @end

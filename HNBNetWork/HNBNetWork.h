@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BaseRequest.h"
 #import "HNBConstantSymbol.h"
+#import "RequestEngine.h"
 
 //! Project version number for HNBNetWork.
 FOUNDATION_EXPORT double HNBNetWorkVersionNumber;
