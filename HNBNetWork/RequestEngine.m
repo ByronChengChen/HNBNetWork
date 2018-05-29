@@ -105,8 +105,8 @@
                              success:(void (^)(NSURLSessionDataTask * _Nonnull task, id _Nullable responseData))success
                              failure:(void (^)(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error))failure{
     return [manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * responseObject) {
-        success(task,responseObject);
         NSLog(@"reponse:++++++++++++++\n url:%@,\n params:%@,\n responseObject:%@",url,params,[self jsonString:responseObject]);
+        success(task,responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error:%@",error);
         //取消了就不回调了 ,这里不该这样，应该让用户知道自己取消了网络请求。
