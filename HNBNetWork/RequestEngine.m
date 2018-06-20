@@ -21,7 +21,7 @@
     return instance;
 }
 
-- (NSURLSessionTask *)addRequest:(BaseRequest*)baseRequest
+- (NSURLSessionTask *)addRequest:(HNBBaseRequest*)baseRequest
                    successBlock:(NetWorkSuccessBlock)successBlock
                    requestFailBlock:(RequestFailBlock)failBlock{
     NSURLSessionTask *task = nil;
@@ -29,7 +29,7 @@
     return task;
 }
 
-- (NSURLSessionTask *)sessionTaskFotRequest:(BaseRequest*)baseRequest successBlock:(NetWorkSuccessBlock)successBlock requestFailBlock:(RequestFailBlock)failBlock{
+- (NSURLSessionTask *)sessionTaskFotRequest:(HNBBaseRequest*)baseRequest successBlock:(NetWorkSuccessBlock)successBlock requestFailBlock:(RequestFailBlock)failBlock{
     NSURLSessionTask *task = nil;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
@@ -48,7 +48,7 @@
             }];
         }
     }
-    NSString *url = [NSString stringWithFormat:@"%@/%@",baseRequest.baseUrl,baseRequest.apiUrl];
+    NSString *url = [NSString stringWithFormat:@"%@/%@",baseRequest.hnbBaseUrl,baseRequest.hnbApiUrl];
     NSDictionary *params = baseRequest.keyAndVaules;
     if([baseRequest respondsToSelector:@selector(assembleParams:)]){
         params = [baseRequest assembleParams:(NSMutableDictionary *)params];
@@ -56,7 +56,7 @@
     
     //TODO: chengk 待优化 颜色打印
     NSString *methordStr = nil;
-    switch (baseRequest.apiMethord) {
+    switch (baseRequest.hnbApiMethord) {
         case APIGet:
             methordStr = @"GET";
             break;
@@ -67,7 +67,7 @@
             break;
     }
     NSLog(@"request:--------------\n method:%@,url:%@,\n params:%@",methordStr,url,[self jsonString:params]);
-    switch (baseRequest.apiMethord) {
+    switch (baseRequest.hnbApiMethord) {
         case APIGet:
         {
             task = [self netWorkManager:manager getUrl:url params:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseData) {
@@ -104,16 +104,21 @@
                               params:(NSDictionary *)params
                              success:(void (^)(NSURLSessionDataTask * _Nonnull task, id _Nullable responseData))success
                              failure:(void (^)(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error))failure{
-    return [manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * responseObject) {
+    NSURLSessionTask *task = [manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * responseObject) {
         NSLog(@"reponse:++++++++++++++\n url:%@,\n params:%@,\n responseObject:%@",url,params,[self jsonString:responseObject]);
-        success(task,responseObject);
+        if(success){
+            success(task,responseObject);
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error:%@",error);
+        NSLog(@"network response error:\n%@",error);
         //取消了就不回调了 ,这里不该这样，应该让用户知道自己取消了网络请求。
         if(NSURLErrorCancelled != error.code){
-            failure(task,error);
+            if(failure){
+                failure(task,error);
+            }
         }
     }];
+    return task;
 }
 
 - (NSURLSessionTask *)netWorkManager:(AFHTTPSessionManager *)manager postUrl:(NSString *)url
@@ -137,19 +142,23 @@
     }else{
         params = [self jsonString:paramsDict];
     }
-    return [manager POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *responseObject) {
-        success(task,responseObject);
+    NSURLSessionTask *task = [manager POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *responseObject) {
+        if(success){
+            success(task,responseObject);
+        }
         NSLog(@"reponse:++++++++++++++\n url:%@,\n params:%@,\n responseObject:%@ ",url,params,[self jsonString:responseObject]);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error:%@",error);
+        NSLog(@"network response error:%@",error);
         //取消了就不回调了
         if(NSURLErrorCancelled != error.code){
-            failure(task,error);
+            if(failure){
+                failure(task,error);
+            }
         }
     }];
+    return task;
 }
 
-//TODO: chengk 网络请求 1 http请求头自定义 这里的jsonString方法需要抽出
 - (NSString *)jsonString:(NSDictionary*)dict {
     if(!dict)
         return nil;

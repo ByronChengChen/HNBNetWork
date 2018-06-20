@@ -28,7 +28,7 @@
     return task;
 }
 
-- (void)loadCacheWithData:(id)cacheDate{
+- (void)hnbLoadCacheWithData:(id)cacheDate{
     if(self.cacheDataRefreshUiBlock){
         NSDictionary *content = (NSDictionary *)cacheDate;
         ResponseHead *head = [[ResponseHead alloc] init];

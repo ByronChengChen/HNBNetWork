@@ -36,7 +36,6 @@
     } requestFailBlock:^(NSError *error) {
         
     }];
-    //TODO: chengk 解决内容较大的异常数据上传
     
 }
 

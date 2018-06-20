@@ -7,7 +7,6 @@
 //
 
 #import "BaseNavigationController.h"
-#import "BaseViewController.h"
 
 @interface BaseNavigationController ()
 
@@ -27,10 +26,7 @@
 
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated{
     UIViewController *vc = [super popViewControllerAnimated:animated];
-    if([vc isKindOfClass:[BaseViewController class]]){
-        BaseViewController *baseVc = (BaseViewController *)vc;
-        [baseVc stopAllRequest];
-    }
+    [vc stopAllRequest];
     return vc;
 }
 

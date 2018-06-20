@@ -6,8 +6,6 @@
 //  Copyright © 2017年 开发. All rights reserved.
 //
 
-#import "BaseViewController.h"
-
-@interface BeiJingTimeController : BaseViewController
+@interface BeiJingTimeController : UIViewController
 
 @end

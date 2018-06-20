@@ -1,15 +1,14 @@
 //
-//  BaseViewController.h
+//  UIViewController+NetWork.h
 //  HNBNetWorkDemo
 //
-//  Created by 开发 on 2017/6/30.
-//  Copyright © 2017年 开发. All rights reserved.
+//  Created by 程康 on 2018/6/20.
+//  Copyright © 2018年 开发. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import <HNBNetWork/HNBNetWork.h>
 
-@interface BaseViewController : UIViewController
+@interface UIViewController (NetWork)
 @property (nonatomic,strong) NSMutableDictionary<NSNumber *, BaseBusinessRequest *> *requestsRecord;
 
 - (void)stopAllRequest;

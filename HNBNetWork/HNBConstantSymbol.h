@@ -9,7 +9,6 @@
 #ifndef HNBConstantSymbol_h
 #define HNBConstantSymbol_h
 #import <Foundation/Foundation.h>
-#import "ResponseHead.h"
 
 static NSString * const HNBConstantToken = @"HNBConstantToken";
 static NSString * const HNBConstantSession = @"HNBConstantSession";

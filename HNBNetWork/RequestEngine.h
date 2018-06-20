@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "HNBConstantSymbol.h"
-#import "BaseRequest.h"
+#import "HNBBaseRequest.h"
 
 @interface RequestEngine : NSObject
 + (instancetype)sharedEngine;
 
--(NSURLSessionTask *)addRequest:(BaseRequest*)baseRequest
+-(NSURLSessionTask *)addRequest:(HNBBaseRequest*)baseRequest
                           successBlock:(NetWorkSuccessBlock)successBlock
                           requestFailBlock:(RequestFailBlock)failBlock;
 @end

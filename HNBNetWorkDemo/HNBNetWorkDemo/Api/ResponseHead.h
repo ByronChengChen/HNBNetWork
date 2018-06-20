@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-//TODO: chengk 网络请求 3 这个类不能再库里面写
 @interface ResponseHead : NSObject
 
 /**

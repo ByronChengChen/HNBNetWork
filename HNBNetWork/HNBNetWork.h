@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseRequest.h"
+#import "HNBBaseRequest.h"
 #import "HNBConstantSymbol.h"
 #import "RequestEngine.h"
 

@@ -1,7 +1,7 @@
 //
-//  BaseRequest.h
+//  HNBBaseRequest.h
 //  HNBNetWork
-//
+//  本类处理cache 和 自定义请求参数 header,url,params,timeout等等
 //  Created by 开发 on 2017/6/27.
 //  Copyright © 2017年 开发. All rights reserved.
 //
@@ -10,6 +10,7 @@
 #import "HNBConstantSymbol.h"
 #import <AFNetworking/AFNetworking.h>
 static NSString * const HNBResponseCacheDate = @"HNBResponseCacheDate";
+extern NSString * const HNBUsingCacheKey;
 
 typedef NS_ENUM(NSUInteger, HNBRequestCachePolicy) {
     /**
@@ -22,7 +23,7 @@ typedef NS_ENUM(NSUInteger, HNBRequestCachePolicy) {
     HNBRequestCachePriorityPolicy
 };
 
-@interface BaseRequest : NSObject
+@interface HNBBaseRequest : NSObject
 @property (nonatomic, assign) HNBRequestCachePolicy cachePolicy;
 @property (nonatomic, strong) NSURLSessionTask *task;
 - (NSURLSessionTask *)hnbStartWithSucessBlock:(NetWorkSuccessBlock)successBlock requestFailBlock:(RequestFailBlock)requestFailBlock;
@@ -46,12 +47,14 @@ typedef NS_ENUM(NSUInteger, HNBRequestCachePolicy) {
 /**
  *  告知如何通过缓存刷新页面，抽象方法
  */
-- (void)loadCacheWithData:(id)cacheDate;
+- (void)hnbLoadCacheWithData:(id)cacheDate;
++ (BOOL)hnbIsUsingCacheData:(NSDictionary *)data;
 
-- (NSString *)apiUrl;
-- (ApiMethord)apiMethord;
-- (NSInteger)timeOut;
-- (NSString *)baseUrl;
+- (NSString *)hnbApiUrl;
+- (ApiMethord)hnbApiMethord;
+//TODO: chengk HNBNetWork 优化 1 timeOut需要用上
+- (NSInteger)hnbTimeOut;
+- (NSString *)hnbBaseUrl;
 //rquest methord end
 
 - (void)stop;

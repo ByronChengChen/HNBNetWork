@@ -7,10 +7,11 @@
 //
 
 #import <HNBNetWork/HNBNetWork.h>
+#import "ResponseHead.h"
 typedef void(^SuccessBlock)(id content);
 typedef void(^FailBlock)(ResponseHead *head);
 
-@interface BaseBusinessRequest : BaseRequest
+@interface BaseBusinessRequest : HNBBaseRequest
 - (NSURLSessionTask *)startWithSucessBlock:(SuccessBlock)successBlock failBlock:(FailBlock)failBlock requestFailBlock:(RequestFailBlock)requestFailBlock;
 //告诉ui该如何加载缓存
 @property (nonatomic,copy) SuccessBlock cacheDataRefreshUiBlock;

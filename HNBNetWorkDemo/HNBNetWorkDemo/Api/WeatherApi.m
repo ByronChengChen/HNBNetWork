@@ -10,15 +10,15 @@
 
 @implementation WeatherApi
 
-- (NSString *)baseUrl{
+- (NSString *)hnbBaseUrl{
     return @"https://www.sojson.com";
 }
 
-- (NSString*)apiUrl{
+- (NSString*)hnbApiUrl{
     return @"open/api/weather/json.shtml";
 }
 
-- (ApiMethord)apiMethord{
+- (ApiMethord)hnbApiMethord{
     return APIGet;
 }
 

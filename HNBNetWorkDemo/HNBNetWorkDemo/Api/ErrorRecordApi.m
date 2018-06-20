@@ -10,15 +10,15 @@
 
 @implementation ErrorRecordApi
 
-- (NSString *)baseUrl{
+- (NSString *)hnbBaseUrl{
     return @"https://openapi.hanabi.com";
 }
 
-- (NSString *)apiUrl{
+- (NSString *)hnbApiUrl{
     return @"Log/Log/Write";
 }
 
-- (ApiMethord )apiMethord{
+- (ApiMethord )hnbApiMethord{
     return APIPost;
 }
 

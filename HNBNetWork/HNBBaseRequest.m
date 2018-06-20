@@ -1,25 +1,24 @@
 //
-//  BaseRequest.m
+//  HNBBaseRequest.m
 //  HNBNetWork
 //
 //  Created by 开发 on 2017/6/27.
 //  Copyright © 2017年 开发. All rights reserved.
 //
 
-#import "BaseRequest.h"
+#import "HNBBaseRequest.h"
 #import "RequestEngine.h"
 #import "NSObject+HNB.h"
 #import <CommonCrypto/CommonDigest.h>
 
 static NSString * const HNBResponsCachePath = @"HNBResponsCachePath";
+NSString * const HNBUsingCacheKey = @"HNBUsingCacheKey";
 
-
-@interface BaseRequest()
-
+@interface HNBBaseRequest()
 
 @end
 
-@implementation BaseRequest
+@implementation HNBBaseRequest
 
 /**
  *  md5加密
@@ -37,7 +36,7 @@ static NSString * const HNBResponsCachePath = @"HNBResponsCachePath";
             ];
 }
 
-- (BaseRequest *)init{
+- (HNBBaseRequest *)init{
     if(self == [super init]){
         self.cachePolicy = HNBRequestNoCachePolicy;
     }
@@ -62,7 +61,7 @@ static NSString * const HNBResponsCachePath = @"HNBResponsCachePath";
 }
 
 - (void)saveCacheWithContent:(NSDictionary *)content{
-    BOOL requestCached = ((BaseRequest *)self).cachePolicy == HNBRequestCachePriorityPolicy ? YES : NO;
+    BOOL requestCached = ((HNBBaseRequest *)self).cachePolicy == HNBRequestCachePriorityPolicy ? YES : NO;
     if(requestCached){
         // 缓存策略 1 存储缓存
         if([self cacheTimeInSeconds] > 0){
@@ -89,7 +88,7 @@ static NSString * const HNBResponsCachePath = @"HNBResponsCachePath";
 }
 
 - (void)loadCachedData{
-    BOOL requestCached = ((BaseRequest *)self).cachePolicy == HNBRequestCachePriorityPolicy ? YES : NO;
+    BOOL requestCached = ((HNBBaseRequest *)self).cachePolicy == HNBRequestCachePriorityPolicy ? YES : NO;
     if(requestCached){
         //缓存策略 2 如果存在缓存，读取缓存数据
         NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:[self cacheFilePath]];
@@ -113,13 +112,24 @@ static NSString * const HNBResponsCachePath = @"HNBResponsCachePath";
                 [self clearCachedData];
                 return;
             }else{
-                NSDictionary *cachedResponseObject = dic;
-                if([self respondsToSelector:@selector(loadCacheWithData:)]){
-                    [self loadCacheWithData:cachedResponseObject];
+                NSMutableDictionary *cachedResponseObject = [NSMutableDictionary dictionaryWithDictionary:dic];
+                cachedResponseObject[HNBUsingCacheKey] = @(YES);
+                if([self respondsToSelector:@selector(hnbLoadCacheWithData:)]){
+                    [self hnbLoadCacheWithData:cachedResponseObject];
                 }
             }
         }
     }
+}
+
++ (BOOL)hnbIsUsingCacheData:(NSDictionary *)data{
+    BOOL usingCacheData = NO;
+    if(data && [data isKindOfClass:[NSDictionary class]]){
+        if(data[HNBUsingCacheKey] && ((NSNumber *)(data[HNBUsingCacheKey])).boolValue){
+            usingCacheData = YES;
+        }
+    }
+    return usingCacheData;
 }
 
 // 缓存策略 3 请求失败或者缓存超时，缓存清除
@@ -161,12 +171,12 @@ static NSString * const HNBResponsCachePath = @"HNBResponsCachePath";
 }
 
 - (NSString *)cacheFileName {
-    NSString *requestUrl = [self apiUrl];
-    NSString *baseUrl = [self baseUrl];
+    NSString *requestUrl = [self hnbApiUrl];
+    NSString *baseUrl = [self hnbBaseUrl];
     id argument = self.keyAndVaules;
     NSString *requestInfo = [NSString stringWithFormat:@"Method:%ld Host:%@ Url:%@ Argument:%@",
-                             (long)[self apiMethord], baseUrl, requestUrl, argument];
-    NSString *cacheFileName = [BaseRequest md5:requestInfo];
+                             (long)[self hnbApiMethord], baseUrl, requestUrl, argument];
+    NSString *cacheFileName = [HNBBaseRequest md5:requestInfo];
     return cacheFileName;
 }
 
@@ -181,19 +191,19 @@ static NSString * const HNBResponsCachePath = @"HNBResponsCachePath";
 }
 
 //基类方法中默认
-- (NSString *)baseUrl{
+- (NSString *)hnbBaseUrl{
     return @"https://www.baidu.com";
 }
 
-- (NSString*)apiUrl{
+- (NSString*)hnbApiUrl{
     return @"";
 }
 
-- (ApiMethord)apiMethord{
+- (ApiMethord)hnbApiMethord{
     return APIPost;
 }
 
-- (NSInteger)timeOut{
+- (NSInteger)hnbTimeOut{
     return 20;
 }
 
