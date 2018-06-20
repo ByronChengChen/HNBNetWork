@@ -54,6 +54,7 @@ typedef NS_ENUM(NSUInteger, HNBRequestCachePolicy) {
 - (ApiMethord)hnbApiMethord;
 - (NSInteger)hnbTimeOut;
 - (NSString *)hnbBaseUrl;
+- (NSInteger)cacheTimeInSeconds;
 //rquest methord end
 
 - (void)stop;
