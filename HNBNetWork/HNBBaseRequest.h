@@ -52,7 +52,6 @@ typedef NS_ENUM(NSUInteger, HNBRequestCachePolicy) {
 
 - (NSString *)hnbApiUrl;
 - (ApiMethord)hnbApiMethord;
-//TODO: chengk HNBNetWork 优化 1 timeOut需要用上
 - (NSInteger)hnbTimeOut;
 - (NSString *)hnbBaseUrl;
 //rquest methord end

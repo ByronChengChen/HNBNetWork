@@ -32,7 +32,7 @@
 - (NSURLSessionTask *)sessionTaskFotRequest:(HNBBaseRequest*)baseRequest successBlock:(NetWorkSuccessBlock)successBlock requestFailBlock:(RequestFailBlock)failBlock{
     NSURLSessionTask *task = nil;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
+    manager.requestSerializer.timeoutInterval = baseRequest.hnbTimeOut;
     //设置请求序列
     manager.requestSerializer = [baseRequest hnbRequestSerializerType];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
