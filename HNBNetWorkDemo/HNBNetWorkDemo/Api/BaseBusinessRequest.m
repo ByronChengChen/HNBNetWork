@@ -22,7 +22,7 @@
     task = [self hnbStartWithSucessBlock:^(id content) {
         [self hideHud];
         ResponseHead *head = [self commonHeadWithContent:content];
-        if(![self businessErrorWithContent:content]){
+        if(![self isBusinessErrorWithContent:content]){
             successBlock(content);
         }else{
             [self showBusinessErrorWithHeader:head];
@@ -45,7 +45,7 @@
     return head;
 }
 
-- (BOOL)businessErrorWithContent:(NSDictionary*)content{
+- (BOOL)isBusinessErrorWithContent:(NSDictionary*)content{
     BOOL error = NO;
     ResponseHead *head = [self commonHeadWithContent:content];
     if(head.code != 200){
@@ -57,9 +57,7 @@
 - (void)hnbLoadCacheWithData:(id)cacheDate{
     if(self.cacheDataRefreshUiBlock){
         NSDictionary *content = (NSDictionary *)cacheDate;
-        ResponseHead *head = [[ResponseHead alloc] init];
-        [head setValuesForKeysWithDictionary:content[@"Head"]];
-        if(0 == head.code || (content[@"success"] && [content[@"success"] intValue] == 1)){
+        if(![self isBusinessErrorWithContent:content]){
             self.cacheDataRefreshUiBlock(cacheDate);
         }
     }
