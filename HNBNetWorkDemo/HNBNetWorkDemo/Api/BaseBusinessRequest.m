@@ -21,9 +21,8 @@
     self.hnbApiNeedHud == NO ? : [self showHud];
     task = [self hnbStartWithSucessBlock:^(id content) {
         [self hideHud];
-        ResponseHead *head = [[ResponseHead alloc] init];
-        [head setValuesForKeysWithDictionary:content[@"Head"]];
-        if(10000 == head.code || 0 == head.code || (content[@"success"] && [content[@"success"] intValue] == 1)){
+        ResponseHead *head = [self commonHeadWithContent:content];
+        if(![self businessErrorWithContent:content]){
             successBlock(content);
         }else{
             [self showBusinessErrorWithHeader:head];
@@ -37,6 +36,22 @@
         }
     }];
     return task;
+}
+
+- (ResponseHead *)commonHeadWithContent:(NSDictionary *)content{
+    ResponseHead *head = [[ResponseHead alloc] init];
+    head.code = ((NSNumber *)(content[@"status"])).intValue;
+    head.msg = content[@"message"];
+    return head;
+}
+
+- (BOOL)businessErrorWithContent:(NSDictionary*)content{
+    BOOL error = NO;
+    ResponseHead *head = [self commonHeadWithContent:content];
+    if(head.code != 200){
+        error = YES;
+    }
+    return error;
 }
 
 - (void)hnbLoadCacheWithData:(id)cacheDate{
@@ -71,7 +86,10 @@
     if([self.delegate respondsToSelector:@selector(showBusinessErrorWithHeader:api:)]){
         [self.delegate showBusinessErrorWithHeader:header api:self];
     }else{
-
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+        hud.label.text = header.msg;
+        hud.mode = MBProgressHUDModeText;
+        [hud hideAnimated:YES afterDelay:3];
     }
 }
 
