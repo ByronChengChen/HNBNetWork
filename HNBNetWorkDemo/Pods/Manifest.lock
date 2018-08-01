@@ -14,24 +14,33 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - HNBNetWork (0.0.3):
+  - HNBNetWork (0.0.7):
     - AFNetworking (= 3.1.0)
+  - MBProgressHUD (1.0.0)
   - ReactiveObjC (3.0.0)
 
 DEPENDENCIES:
   - AFNetworking (= 3.1.0)
   - HNBNetWork (from `../`)
+  - MBProgressHUD (= 1.0.0)
   - ReactiveObjC (= 3.0.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - MBProgressHUD
+    - ReactiveObjC
 
 EXTERNAL SOURCES:
   HNBNetWork:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  HNBNetWork: 46f1bd06de83eb1ff3bb4da7c6a056064745a20f
+  HNBNetWork: 99b925469e4b05e13bfef2cef7ea578876baf781
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
 
-PODFILE CHECKSUM: 083dfc916f4b06842d7b558bc40627739b6122f5
+PODFILE CHECKSUM: c4cd5b2fc4bfd0828a458812f9ed747be42ae666
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.2

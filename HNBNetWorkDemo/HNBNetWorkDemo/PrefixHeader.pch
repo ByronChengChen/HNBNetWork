@@ -12,6 +12,7 @@
 #import "NSDictionary+Extension.h"
 #import "BaseBusinessRequest.h"
 #import "UIViewController+NetWork.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 #ifdef DEBUG
 #define NSLog(format, ...) NSLog(format, ## __VA_ARGS__)

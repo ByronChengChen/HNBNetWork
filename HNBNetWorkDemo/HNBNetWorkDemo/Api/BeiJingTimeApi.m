@@ -22,8 +22,8 @@
     return APIGet;
 }
 
-- (HNBRequestCachePolicy)cachePolicy{
-    return HNBRequestCachePriorityPolicy;
-}
+//- (HNBRequestCachePolicy)cachePolicy{
+//    return HNBRequestCachePriorityPolicy;
+//}
 
 @end

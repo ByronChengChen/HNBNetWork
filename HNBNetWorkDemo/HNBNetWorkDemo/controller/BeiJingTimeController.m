@@ -13,7 +13,7 @@
 #import <HNBNetWork/RequestEngine.h>
 #import "UIViewController+NetWork.h"
 
-@interface BeiJingTimeController ()
+@interface BeiJingTimeController ()<BaseBusinessRequestDelegate>
 @property (nonatomic, weak) IBOutlet UILabel *timeLB;
 @property (nonatomic, weak) IBOutlet UIButton *requestBtn;
 @end
@@ -51,6 +51,8 @@
     
     
     BeiJingTimeApi *api = [BeiJingTimeApi new];
+    api.hnbApiNeedHud = YES;
+    api.delegate = self;
     [self startApi:api sucessBlock:nil failBlock:nil requestFailBlock:nil];
 //    NSURLSessionTask *task1 = [api startWithSucessBlock:^(id content) {
 //
@@ -62,6 +64,8 @@
 //    NSLog(@"time task1:%@",task1);
 
     WeatherApi *weatherApi = [WeatherApi new];
+//    weatherApi.hnbApiNeedHud = YES;
+//    weatherApi.delegate = self;
     weatherApi.city = @"北京";
     [self startApi:weatherApi sucessBlock:nil failBlock:nil requestFailBlock:nil];
 //    NSURLSessionTask *task2 = [weatherApi startWithSucessBlock:^(id content) {
@@ -89,6 +93,13 @@
 //        }];
 //        NSLog(@"netWorkManager get task.taskIdentifier:%ld",task.taskIdentifier);
 //    }
+}
+
+#pragma mark -BaseBusinessRequestDelegate
+
+- (void)showHud{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+    hud.label.text = @"天气预报信息加载中";
 }
 
 @end
