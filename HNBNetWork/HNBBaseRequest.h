@@ -27,6 +27,7 @@ typedef NS_ENUM(NSUInteger, HNBRequestCachePolicy) {
 @property (nonatomic, assign) HNBRequestCachePolicy cachePolicy;
 @property (nonatomic, strong) NSURLSessionTask *task;
 - (NSURLSessionTask *)hnbStartWithSucessBlock:(NetWorkSuccessBlock)successBlock requestFailBlock:(RequestFailBlock)requestFailBlock;
+- (NSURLSessionTask *)hnbStartWithResponseBlock:(HNBResponseBlock)responseBlock requestFailBlock:(RequestFailBlock)requestFailBlock;
 
 //rquest methord begin
 /**

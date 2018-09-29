@@ -24,12 +24,18 @@
 - (NSURLSessionTask *)addRequest:(HNBBaseRequest*)baseRequest
                    successBlock:(NetWorkSuccessBlock)successBlock
                    requestFailBlock:(RequestFailBlock)failBlock{
-    NSURLSessionTask *task = nil;
-    task = [self sessionTaskFotRequest:baseRequest successBlock:successBlock requestFailBlock:failBlock];
-    return task;
+    return [self sessionTaskFotRequest:baseRequest responseBlock:^(NSURLSessionDataTask *task, id content) {
+        successBlock(content);
+    } requestFailBlock:failBlock];
 }
 
-- (NSURLSessionTask *)sessionTaskFotRequest:(HNBBaseRequest*)baseRequest successBlock:(NetWorkSuccessBlock)successBlock requestFailBlock:(RequestFailBlock)failBlock{
+-(NSURLSessionTask *)addRequest:(HNBBaseRequest*)baseRequest
+                  responseBlock:(HNBResponseBlock)responseBlock
+               requestFailBlock:(RequestFailBlock)failBlock{
+    return [self sessionTaskFotRequest:baseRequest responseBlock:responseBlock requestFailBlock:failBlock];
+}
+
+- (NSURLSessionTask *)sessionTaskFotRequest:(HNBBaseRequest*)baseRequest responseBlock:(HNBResponseBlock)responseBlock requestFailBlock:(RequestFailBlock)failBlock{
     NSURLSessionTask *task = nil;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer.timeoutInterval = baseRequest.hnbTimeOut;
@@ -71,8 +77,8 @@
         case APIGet:
         {
             task = [self netWorkManager:manager getUrl:url params:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseData) {
-                if(successBlock){
-                    successBlock(responseData);
+                if(responseBlock){
+                    responseBlock(task,responseData);
                 }
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 if(failBlock){
@@ -83,8 +89,8 @@
             break;
         case APIPost:{
             task = [self netWorkManager:manager postUrl:url params:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseData) {
-                if(successBlock){
-                    successBlock(responseData);
+                if(responseBlock){
+                    responseBlock(task,responseData);
                 }
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 if(failBlock){
@@ -99,6 +105,7 @@
     }
     return task;
 }
+
 
 - (NSURLSessionTask *)netWorkManager:(AFHTTPSessionManager *)manager getUrl:(NSString *)url
                               params:(NSDictionary *)params

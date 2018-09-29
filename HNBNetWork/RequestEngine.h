@@ -16,4 +16,7 @@
 -(NSURLSessionTask *)addRequest:(HNBBaseRequest*)baseRequest
                           successBlock:(NetWorkSuccessBlock)successBlock
                           requestFailBlock:(RequestFailBlock)failBlock;
+-(NSURLSessionTask *)addRequest:(HNBBaseRequest*)baseRequest
+                   responseBlock:(HNBResponseBlock)responseBlock
+               requestFailBlock:(RequestFailBlock)failBlock;
 @end

@@ -24,6 +24,7 @@ typedef NS_ENUM(NSUInteger, ApiMethord) {
      */
     APIPost
 };
+typedef void(^HNBResponseBlock)(NSURLSessionDataTask *task,id content);
 typedef void(^NetWorkSuccessBlock)(id content);
 typedef void(^RequestFailBlock)(NSError *error);
 

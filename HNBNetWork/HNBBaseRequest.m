@@ -44,12 +44,20 @@ NSString * const HNBUsingCacheKey = @"HNBUsingCacheKey";
 }
 
 #pragma mark -缓存策略
+
 - (NSURLSessionTask *)hnbStartWithSucessBlock:(NetWorkSuccessBlock)successBlock requestFailBlock:(RequestFailBlock)requestFailBlock{
+    return [self hnbStartWithResponseBlock:^(NSURLSessionDataTask *task, id content) {
+        successBlock(content);
+    } requestFailBlock:requestFailBlock];
+}
+
+- (NSURLSessionTask *)hnbStartWithResponseBlock:(HNBResponseBlock)responseBlock requestFailBlock:(RequestFailBlock)requestFailBlock{
     NSURLSessionTask *task = nil;
+    //TODO: chengk HNBNetWork cache这一层值得优化
     [self loadCachedData];
-    task = [[RequestEngine sharedEngine] addRequest:self successBlock:^(NSDictionary *content) {
-        if(successBlock){
-            successBlock(content);
+    task = [[RequestEngine sharedEngine] addRequest:self responseBlock:^(NSURLSessionDataTask *responseTask, NSDictionary *content) {
+        if(responseBlock){
+            responseBlock(responseTask,content);
         }
         [self saveCacheWithContent:content];
     }  requestFailBlock:^(NSError *error){
