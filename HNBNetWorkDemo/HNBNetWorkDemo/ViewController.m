@@ -66,6 +66,7 @@ static NSString * const g_CellId = @"g_CellId";
     return cell;
 }
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     CellType type = indexPath.row + 1;
     switch (type) {
